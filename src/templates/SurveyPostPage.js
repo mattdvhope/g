@@ -62,7 +62,6 @@ const SurveyPostPage = ({ data, siteurl, socialConfigss }) => (
             data-size="large"
             data-share="true"
           />
-
           <br/>
         </div>
         <Form
@@ -83,6 +82,9 @@ const SurveyPostPage = ({ data, siteurl, socialConfigss }) => (
           data-size="large"
           data-share="true"
         />
+        <br/>
+        <br/>
+        <div className="fb-comments" data-href="https://relationshipsthailand.org/survey-1" data-numposts="2" data-width=""></div>
         <br/>
         <br/>
         <Share
