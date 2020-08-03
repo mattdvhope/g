@@ -8,7 +8,7 @@ import Share from "../components/share";
 import Form from "../components/form";
 import { rubyQuestions } from "../utils/rubyStyleObjs"
 
-const SurveyPostPage = ({ data, siteurl, socialConfigss, profile }) => (
+const SurveyPostPage = ({ data, siteurl, socialConfigss }) => (
 	<Layout>
     <SEO
       title={data.title}
@@ -61,7 +61,6 @@ const SurveyPostPage = ({ data, siteurl, socialConfigss, profile }) => (
           survey_id={data.id}
           title={data.title}
           questions={rubyQuestions(data.questions)}
-          profile={profile}
           thankYouNote={data.thankYouNote}
           furtherCta={data.furtherCta}
           belowCta={data.belowCta}
@@ -71,7 +70,6 @@ const SurveyPostPage = ({ data, siteurl, socialConfigss, profile }) => (
         <br/>
         <Share
           socialConfig={{
-            ...socialConfigss.site.siteMetadata.twiteerhandletitle,
             config: {
               url: `${siteurl}${socialConfigss.slug}`,
               title: `${socialConfigss.title}`

@@ -3,6 +3,11 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { isLoggedIn } from "../utils/auth"
 // import { linkVisit } from "../utils/railsVisits"
+import { lineLoginURL } from "../utils/linePlatform"
+import { fbLoginURL } from "../utils/FBplatform"
+import { FacebookBrowser, LineBrowser } from "../utils/BrowserTypes"
+import LineIcon from "../images/LINE_APP.png"
+import FacebookIcon from "../images/FacebookIcon.jpg"
 
 export default class Banner extends Component {
 
@@ -10,7 +15,26 @@ export default class Banner extends Component {
     super();
     this.state = { 
       window: undefined,
+      linkColor: { color: `#DAC899` },
+      is_FB_browser: false,
+      is_LINE_browser: false,
+      GatsbyLinkClicked: false,
     };
+  }
+
+  componentDidMount() {
+    this.setState({ is_FB_browser: FacebookBrowser(), is_LINE_browser: LineBrowser(), window: window })
+  }
+
+  GatsbyLink() {
+    return (
+      <a 
+        href={`survey-1`}
+        style={this.state.linkColor}
+      >
+        {this.props.socialLinkStatement}
+      </a>
+    )
   }
 
   lineIcon() {
@@ -18,9 +42,9 @@ export default class Banner extends Component {
       <li>
         <a
           className="fab fa-line"
-          href="#"
+          href={`https://line.me/R/ti/p/%40000ombos`}
           style={{ fontSize: `200%` }}
-          rel="line app"
+          rel="noopener noreferrer"
         ></a>
       </li>
     )
@@ -31,7 +55,7 @@ export default class Banner extends Component {
       <li>
         <a
           className="fab fa-facebook-f"
-          href="#"
+          href={`https://www.facebook.com/pg/relationshipsthailand/`}
           style={{ fontSize: `140%` }}
           rel="noopener noreferrer"
         ></a>
@@ -62,12 +86,12 @@ export default class Banner extends Component {
                   marginRight: `auto`,
                   width: `70%`,
                 }}>
-                  <Link to="survey-1" style={{ color: `#DAC899` }}>Cat page</Link>
+                  {this.GatsbyLink()}
                 </span>
                 <br/>
                 <ul className="social">
-                  {lineIcon()}
-                  {fbIcon()}
+                  {this.lineIcon()}
+                  {this.fbIcon()}
                 </ul>
               </div>
             </div>

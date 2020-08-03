@@ -12,38 +12,8 @@ export default class surveyPost extends Component {
   constructor(props) {
     super();
     this.state = { 
-      id_token: undefined,
-      person: undefined,
       profile: undefined,
     };
-  }
-
-  async componentDidMount() {
-    const url_with_code = window.location.search.match(/(code=)(.*)(?=&state)/)
-    const code = url_with_code ? url_with_code[2] : null
-    const surveyPost = this;
-
-    if (!isLoggedIn() && code) {
-      if (localStorage.getItem("loginLink") === "LineLink") {  // LINE Login validations
-        const json = await getIdToken(code)
-        const person = await getPerson(json)
-        const decodedData = validateIdToken(json)
-        checkValidation(surveyPost, json, person, decodedData)
-        persistLineUser(person) // in Rails
-      } else { // FB Login validations
-        const token = await getAccessToken(code)
-        const appToken = await getAppAccessToken()
-        const objectFromDebug = await inspectAccessToken(token, appToken)
-        const profile_of_person = await getUserProfile(objectFromDebug.data.user_id, token)
-        handleLogin(profile_of_person)
-        persistFbUser(profile_of_person) // in Rails
-        this. setState({ profile: profile_of_person })
-      }
-    } else if (!isLoggedIn()) {
-      window.location.replace(lineLoginURL()) // LATER!!! ...make FB login capability here too....
-    } else {
-      this.setState({ person: getUser() })
-    }
   }
 
   render() {
@@ -55,28 +25,22 @@ export default class surveyPost extends Component {
     };
 
     const siteurl = this.props.data.contentfulSiteInformation.siteUrl + "/";
-    const twiteerhandle = this.props.data.contentfulSiteInformation
-      .twiteerHandle;
     const socialConfigss = {
       site: {
-        siteMetadata: { siteurl, twiteerhandle }
+        siteMetadata: { siteurl }
       },
       title: data.title,
       slug: data.slug
     };
 
-    if (isLoggedIn()) {
-      return (
-        <SurveyPostPage
-          data={data}
-          siteurl={siteurl}
-          socialConfigss={socialConfigss}
-          profile={this.state.profile}
-        />
-      )
-    } else {
-      return <span/>
-    }
+    return (
+      <SurveyPostPage
+        data={data}
+        siteurl={siteurl}
+        socialConfigss={socialConfigss}
+        profile={this.state.profile}
+      />
+    )
 
   } // render()
 }
@@ -118,7 +82,6 @@ export const pageQuery = graphql`
     }
     contentfulSiteInformation {
       siteUrl
-      twiteerHandle
     }
   }
 `;
