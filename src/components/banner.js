@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { isLoggedIn } from "../utils/auth"
 // import { linkVisit } from "../utils/railsVisits"
+import { FacebookBrowser, LineBrowser } from "../utils/BrowserTypes"
 import LineIcon from "../images/LINE_APP.png"
 import FacebookIcon from "../images/FacebookIcon.jpg"
 
@@ -26,6 +27,7 @@ export default class Banner extends Component {
       <a 
         href={`survey-1`}
         style={this.state.linkColor}
+        onclick='FB.AppEvents.logEvent("GatsbyLinkClicked")'
       >
         {this.props.socialLinkStatement}
       </a>
