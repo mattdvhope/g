@@ -4,12 +4,17 @@ import moment from "moment";
 import 'moment/locale/th';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Helmet from "react-helmet";
 import Share from "../components/share";
 import Form from "../components/form";
 import { rubyQuestions } from "../utils/rubyStyleObjs"
 
 const SurveyPostPage = ({ data, siteurl, socialConfigss }) => (
 	<Layout>
+    <Helmet>
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v7.0&appId=869179106532653&autoLogAppEvents=1" nonce="PFVZXkQp"></script>
+    </Helmet>
     <SEO
       title={data.title}
       keywords={[
@@ -66,17 +71,15 @@ const SurveyPostPage = ({ data, siteurl, socialConfigss }) => (
           belowCta={data.belowCta}
         />
         <br/>
-        <div className="fb-comments" data-href="https://relationshipsthailand.org/survey-1" data-numposts="2" data-width=""></div>
-
-        {/*  Load Facebook SDK for JavaScript  */}
-        <div id="fb-root"></div>
-        <script async defer src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.6"></script>
-
-        {/*  Your embedded comments code  */}
-        <div className="fb-comment-embed"
-           data-href="https://relationshipsthailand.org/survey-1"
-           data-width="500"></div>
-
+        <div
+          className="fb-like"
+          data-href="https://relationshipsthailand.org/survey-1"
+          data-width="300"
+          data-layout="standard"
+          data-action="like"
+          data-size="large"
+          data-share="true"
+        />
         <br/>
         <Share
           socialConfig={{
