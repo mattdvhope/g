@@ -50,8 +50,7 @@ export default class Form extends Component {
 
     console.log("USER:", getUser())
 
-    // axios.post(`http://localhost:3000/surveys`, { 
-    axios.post(`https://nameless-coast-54274.herokuapp.com/surveys`, {
+    axios.post(`${process.env.GATSBY_RAILS_ANON_SURVEYS}`, {
       contentful_id: this.props.survey_id,
       survey_title: this.props.title,
       questions: this.state.final_selections_of_choices,
@@ -68,37 +67,37 @@ export default class Form extends Component {
 		const questions =  this.state.questions; // array
     const survey_done = this.state.survey_done;
 
-    // if (!survey_done) {
-  		// return (
-  		// 	<div className="container-fluid">
-  		// 		<form onSubmit={this.handleSubmit} >
-  		// 			{questions.map((item) => {
-  		// 				return (
-  		// 					<div key={item.id}>
-  		// 					  <h3>
-  		// 					    {item.question}
-  		// 					    <br/>
-  		// 					    <FormChoices
-  		// 					    	choices={item.questionChoices}
-  		// 					    	question={JSON.stringify(item)}
-  		// 					    	handleChange={this.handleChange}
-  		// 					    />
-  		// 					  </h3>
-  		// 					  <br/>
-  		// 					</div>
-  		// 				);
-  		// 			})}
-    //         <p style={{ fontSize: `125%` }} >{this.props.thankYouNote}</p>
-    //         <br/>
-  		// 		  <button type="submit" className="btn btn-success">"ส่ง"</button>
-  		// 		</form>
-  		// 	</div>
-  		// )
-    // } else {
+    if (!survey_done) {
+  		return (
+  			<div className="container-fluid">
+  				<form onSubmit={this.handleSubmit} >
+  					{questions.map((item) => {
+  						return (
+  							<div key={item.id}>
+  							  <h3>
+  							    {item.question}
+  							    <br/>
+  							    <FormChoices
+  							    	choices={item.questionChoices}
+  							    	question={JSON.stringify(item)}
+  							    	handleChange={this.handleChange}
+  							    />
+  							  </h3>
+  							  <br/>
+  							</div>
+  						);
+  					})}
+            <p style={{ fontSize: `125%` }} >{this.props.thankYouNote}</p>
+            <br/>
+  				  <button type="submit" className="btn btn-success">"ส่ง"</button>
+  				</form>
+  			</div>
+  		)
+    } else {
       return (
         <YoutubeHolder/>
       )
-    // }
+    }
 	}
 }
 

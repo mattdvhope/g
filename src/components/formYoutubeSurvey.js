@@ -47,8 +47,7 @@ const FormYoutubeSurvey = () => {
           setSubmittedState(true)
           document.getElementById("button-for-youtube-survey").remove();
 
-          // axios.post(`http://localhost:3000/surveys`, { 
-          axios.post(`https://nameless-coast-54274.herokuapp.com/surveys`, {
+          axios.post(`${process.env.GATSBY_RAILS_ANON_SURVEYS}`, {
             contentful_id: data.contentfulSurveysWithinPage.id,
             survey_title: data.contentfulSurveysWithinPage.title,
             questions: final_choices,
