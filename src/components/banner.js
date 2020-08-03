@@ -79,7 +79,7 @@ export default class Banner extends Component {
               <div className="banner-details">
                 <span style={{ fontSize: `${window.screen.width > 600 ? 8 : 10}vw` }}>
                   {data.name}
-                </span> {/* <h1>I'm {data.designation}.</h1> */} 
+                </span>
                 <span style={{
                   fontSize: `${window.screen.width > 600 ? 4 : 7.5}vw`,
                   marginLeft: `auto`,
