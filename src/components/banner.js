@@ -26,7 +26,7 @@ export default class Banner extends Component {
     this.setState({ is_FB_browser: FacebookBrowser(), is_LINE_browser: LineBrowser(), window: window })
   }
 
-  Linkage( ) {
+  Linkage() {
     if (this.state.is_FB_browser) {
       return this.FbLink();
     }
