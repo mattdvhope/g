@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { isLoggedIn } from "../utils/auth"
 // import { linkVisit } from "../utils/railsVisits"
