@@ -67,6 +67,16 @@ const SurveyPostPage = ({ data, siteurl, socialConfigss }) => (
         />
         <br/>
         <div className="fb-comments" data-href="https://relationshipsthailand.org/survey-1" data-numposts="2" data-width=""></div>
+
+        {/*  Load Facebook SDK for JavaScript  */}
+        <div id="fb-root"></div>
+        <script async defer src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.6"></script>
+
+        {/*  Your embedded comments code  */}
+        <div className="fb-comment-embed"
+           data-href="https://relationshipsthailand.org/survey-1"
+           data-width="500"></div>
+
         <br/>
         <Share
           socialConfig={{
