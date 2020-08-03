@@ -13,7 +13,11 @@ const SurveyPostPage = ({ data, siteurl, socialConfigss }) => (
 	<Layout>
     <Helmet>
       <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v7.0&appId=869179106532653&autoLogAppEvents=1" nonce="PFVZXkQp"></script>
+      <script async defer
+        crossorigin="anonymous"
+        src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v7.0&appId=611958516129057&autoLogAppEvents=1"
+        nonce="PFVZXkQp"
+      />
     </Helmet>
     <SEO
       title={data.title}
@@ -51,16 +55,15 @@ const SurveyPostPage = ({ data, siteurl, socialConfigss }) => (
           
           <div
             className="fb-like"
-            data-href="https://relationshipsthailand.org/"
-            data-width=""
-            data-layout="button"
+            data-href="https://relationshipsthailand.org/survey-1"
+            data-width="300"
+            data-layout="standard"
             data-action="like"
             data-size="large"
             data-share="true"
-            style={{ border: `none`, overflow: `hidden`, height: `31px` }}
           />
 
-          <hr/>
+          <br/>
         </div>
         <Form
           survey_id={data.id}
@@ -80,6 +83,7 @@ const SurveyPostPage = ({ data, siteurl, socialConfigss }) => (
           data-size="large"
           data-share="true"
         />
+        <br/>
         <br/>
         <Share
           socialConfig={{
