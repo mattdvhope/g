@@ -3,8 +3,6 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { isLoggedIn } from "../utils/auth"
 // import { linkVisit } from "../utils/railsVisits"
-import { lineLoginURL } from "../utils/linePlatform"
-import { fbLoginURL } from "../utils/FBplatform"
 import { FacebookBrowser, LineBrowser } from "../utils/BrowserTypes"
 import LineIcon from "../images/LINE_APP.png"
 import FacebookIcon from "../images/FacebookIcon.jpg"
@@ -16,14 +14,7 @@ export default class Banner extends Component {
     this.state = { 
       window: undefined,
       linkColor: { color: `#DAC899` },
-      is_FB_browser: false,
-      is_LINE_browser: false,
-      GatsbyLinkClicked: false,
     };
-  }
-
-  componentDidMount() {
-    this.setState({ is_FB_browser: FacebookBrowser(), is_LINE_browser: LineBrowser(), window: window })
   }
 
   GatsbyLink() {

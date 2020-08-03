@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { graphql, Link } from "gatsby";
 import SurveyPostPage from "./SurveyPostPage"
 import { isLoggedIn, getUser, handleLogin } from "../utils/auth"
-import { getAccessToken, getAppAccessToken, inspectAccessToken, getUserProfile } from "../utils/FBLoginValidations"
-import { getIdToken, getPerson, validateIdToken, checkValidation } from "../utils/lineLoginValidations"
-import { fbLoginURL } from "../utils/FBplatform"
-import { lineLoginURL } from "../utils/linePlatform"
 import { persistFbUser, persistLineUser } from "../utils/railsVisits"
 
 export default class surveyPost extends Component {
