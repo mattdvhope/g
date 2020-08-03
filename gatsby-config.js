@@ -31,6 +31,12 @@ module.exports = {
         accessToken
       }
     },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '222946198915072',
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-facebook-analytics`,
     //   options: {

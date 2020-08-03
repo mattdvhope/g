@@ -6,7 +6,6 @@ import Header from "./header";
 import Footer from "./footer";
 import "../css/style.css";
 import "../css/font-awesome.css";
-import HelmetLocale from "./HelmetLocale"
 
 if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]');
@@ -33,7 +32,6 @@ const Layout = ({ children, header }) => {
       
       render={data => (
         <>
-          <HelmetLocale/>
           <Header
             data={data.contentfulSiteInformation}
             siteTitle={data.contentfulSiteInformation.siteName}
