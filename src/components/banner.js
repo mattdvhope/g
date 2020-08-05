@@ -86,10 +86,10 @@ export default class Banner extends Component {
                   {this.GatsbyLink()}
                 </span>
                 <br/>
-                <ul className="social">
+            {/* <ul className="social">
                   {this.lineIcon()}
                   {this.fbIcon()}
-                </ul>
+                </ul>  */}    
               </div>
             </div>
           </div>
