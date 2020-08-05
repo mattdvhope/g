@@ -31,7 +31,7 @@ function SEO({ description, lang, meta, keywords, title, data }) {
               },
               {
                 property: `og:image`,
-                content: `https://relate.s3-ap-southeast-1.amazonaws.com/sheep-flock-mountain-fb.jpg`
+                content: `https://relate.s3-ap-southeast-1.amazonaws.com/fb-banner.jpg`
               },
               {
                 property: `og:url`,
