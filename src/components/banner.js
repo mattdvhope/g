@@ -27,36 +27,10 @@ export default class Banner extends Component {
       <a 
         href={`survey-1`}
         style={this.state.linkColor}
-        onclick='FB.AppEvents.logEvent("GatsbyLinkClicked")'
+        onClick='FB.AppEvents.logEvent("GatsbyLinkClicked")'
       >
         {this.props.socialLinkStatement}
       </a>
-    )
-  }
-
-  lineIcon() {
-    return (
-      <li>
-        <a
-          className="fab fa-line"
-          href={`https://line.me/R/ti/p/%40000ombos`}
-          style={{ fontSize: `200%` }}
-          rel="noopener noreferrer"
-        ></a>
-      </li>
-    )
-  }
-
-  fbIcon() {
-    return (
-      <li>
-        <a
-          className="fab fa-facebook-f"
-          href={`https://www.facebook.com/pg/relationshipsthailand/`}
-          style={{ fontSize: `140%` }}
-          rel="noopener noreferrer"
-        ></a>
-      </li>
     )
   }
 
@@ -86,10 +60,6 @@ export default class Banner extends Component {
                   {this.GatsbyLink()}
                 </span>
                 <br/>
-            {/* <ul className="social">
-                  {this.lineIcon()}
-                  {this.fbIcon()}
-                </ul>  */}    
               </div>
             </div>
           </div>
