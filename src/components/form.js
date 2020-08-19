@@ -47,8 +47,6 @@ export default class Form extends Component {
     e.preventDefault();
     this.setState({ survey_done: true })
 
-    console.log("USER:", getUser())
-
     axios.post(`${process.env.GATSBY_RAILS_ANON_SURVEYS}`, {
       contentful_id: this.props.survey_id,
       survey_title: this.props.title,
