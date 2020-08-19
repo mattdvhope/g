@@ -63,40 +63,9 @@ export default class Form extends Component {
   }
 
   render() {
-		const questions =  this.state.questions; // array
-    const survey_done = this.state.survey_done;
-
-    if (!survey_done) {
-  		return (
-  			<div className="container-fluid">
-  				<form onSubmit={this.handleSubmit} >
-  					{questions.map((item) => {
-  						return (
-  							<div key={item.id}>
-  							  <h3>
-  							    {item.question}
-  							    <br/>
-  							    <FormChoices
-  							    	choices={item.questionChoices}
-  							    	question={JSON.stringify(item)}
-  							    	handleChange={this.handleChange}
-  							    />
-  							  </h3>
-  							  <br/>
-  							</div>
-  						);
-  					})}
-            <p style={{ fontSize: `125%` }} >{this.props.thankYouNote}</p>
-            <br/>
-  				  <button type="submit" className="btn btn-success">"ส่ง"</button>
-  				</form>
-  			</div>
-  		)
-    } else {
-      return (
-        <YoutubeHolder/>
-      )
-    }
+    return (
+      <YoutubeHolder/>
+    )
 	}
 }
 
