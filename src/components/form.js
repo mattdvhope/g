@@ -7,7 +7,6 @@ import { preventTooManyChoices, updatedQuestions, final_selections_of_choices } 
 // import { persistQuestions } from "../utils/railsVisits" 
 import { getUser } from "../utils/auth"
 import YoutubeHolder from "./YoutubeHolder"
-import FormYoutubeSurvey from "./formYoutubeSurvey"
 
 export default class Form extends Component {
 	constructor(props) {
