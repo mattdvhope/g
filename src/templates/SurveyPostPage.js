@@ -4,21 +4,14 @@ import moment from "moment";
 import 'moment/locale/th';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Helmet from "react-helmet";
 import Share from "../components/share";
 import Form from "../components/form";
 import { rubyQuestions } from "../utils/rubyStyleObjs"
 
 const SurveyPostPage = ({ data, siteurl, socialConfigss }) => (
 	<Layout>
-    <Helmet>
-      <div id="fb-root"></div>
-      <script async defer
-        crossorigin="anonymous"
-        src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v7.0&appId=611958516129057&autoLogAppEvents=1"
-        nonce="PFVZXkQp"
-      />
-    </Helmet>
+    
+    
     <SEO
       title={data.title}
       keywords={[
