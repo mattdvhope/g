@@ -6,6 +6,7 @@ import axios from 'axios'
 import { getUser } from "../utils/auth"
 import { preventTooManyChoices, updatedQuestions, final_selections_of_choices } from "../utils/handleQuestionChoices"
 import { rubyQuestions } from "../utils/rubyStyleObjs"
+import FacebookPage from "./FacebookPage"
 
 const FormYoutubeSurvey = () => {
 
@@ -93,13 +94,7 @@ const FormYoutubeSurvey = () => {
 		    	return (
 		    		<div>
 		    			<hr/>
-		    			<div>
-		    				<a href="https://line.me/R/ti/p/%40000ombos" >
-									<img src={LineIcon} width="45px" alt="LINE"/>
-		    					<span style={{ fontSize: `26px`, color: `#BF8F63` }} >&nbsp;
-		    					เชิญเป็นเพื่อนไลน์ </span>
-		    				</a>
-		    			</div>
+              <FacebookPage/>
 		    			<hr/>
 			    		<h2>
 			    			{data.contentfulSurveysWithinPage.comment.comment}
