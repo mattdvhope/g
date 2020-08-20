@@ -93,9 +93,7 @@ const FormYoutubeSurvey = () => {
 		    } else {
 		    	return (
 		    		<div>
-		    			<hr/>
-              <FacebookPage/>
-		    			<hr/>
+              <br/>
 			    		<h2>
 			    			{data.contentfulSurveysWithinPage.comment.comment}
 			    		</h2>
