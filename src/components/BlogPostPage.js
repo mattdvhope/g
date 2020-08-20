@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { StaticQuery, graphql } from "gatsby";
-import Helmet from "react-helmet";
 import Layout from "./layout";
 import SEO from "./seo";
 import Share from "./share";
 import YoutubeHolder from "./YoutubeHolder"
+import FacebookPage from "./FacebookPage"
 
 const BlogPostPage = () => (
   <StaticQuery
@@ -22,10 +22,6 @@ const BlogPostPage = () => (
 
       return (
 	      <Layout>
-					<Helmet>
-   				  
-   				</Helmet>
-
 	  			<SEO
 	          title={data.title}
 	          keywords={[
@@ -38,6 +34,9 @@ const BlogPostPage = () => (
 	        <div className="site-container blog-post">
 	          <div className="container">
 							<YoutubeHolder/>
+							<FacebookPage/>
+							<br/>
+							<hr/>
 	            <Share
 	              socialConfig={{
 	                ...socialConfigss.site.siteMetadata.twiteerhandletitle,
@@ -48,7 +47,7 @@ const BlogPostPage = () => (
 	              }}
 	            />
 	          </div>
-	        </div>   
+	        </div>
 	      </Layout>
       );
     }}
