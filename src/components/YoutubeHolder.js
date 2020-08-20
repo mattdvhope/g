@@ -9,10 +9,10 @@ const YoutubeHolder = () => {
 	const [buttonPressed, setButtonState] = useState(false);
 	const [belowVideoThere, setBelowVideo] = useState(true);
 
-	useEffect(() => {
-    const posY = window.scrollY + document.getElementById("YoutubeHolder").getBoundingClientRect().top
-    document.documentElement.scrollTop = posY - 65;
-  });
+	// useEffect(() => {
+ //    const posY = window.scrollY + document.getElementById("YoutubeHolder").getBoundingClientRect().top
+ //    document.documentElement.scrollTop = posY - 65;
+ //  });
 
 	let buttonElement;
 	if (buttonPressed === false) {
