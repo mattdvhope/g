@@ -6,7 +6,6 @@ import axios from 'axios'
 import { getUser } from "../utils/auth"
 import { preventTooManyChoices, updatedQuestions, final_selections_of_choices } from "../utils/handleQuestionChoices"
 import { rubyQuestions } from "../utils/rubyStyleObjs"
-import FacebookPage from "./FacebookPage"
 
 const FormYoutubeSurvey = () => {
 
