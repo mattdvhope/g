@@ -40,22 +40,6 @@ function SEO({ description, lang, meta, keywords, title, data }) {
               {
                 property: `og:type`,
                 content: `website`
-              },
-              {
-                name: `twitter:card`,
-                content: `summary`
-              },
-              {
-                name: `twitter:creator`,
-                content: data.contentfulSiteInformation.twiteerHandle
-              },
-              {
-                name: `twitter:title`,
-                content: title
-              },
-              {
-                name: `twitter:description`,
-                content: data.contentfulSiteInformation.siteDescription
               }
             ]
               .concat(
@@ -96,7 +80,6 @@ const detailsQuery = graphql`
       siteName
       siteUrl
       siteDescription
-      twiteerHandle
     }
   }
 `;

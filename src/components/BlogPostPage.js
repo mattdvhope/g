@@ -39,7 +39,6 @@ const BlogPostPage = () => (
 							<hr/>
 	            <Share
 	              socialConfig={{
-	                ...socialConfigss.site.siteMetadata.twiteerhandletitle,
 	                config: {
 	                  url: `${siteurl}${socialConfigss.slug}`,
 	                  title: `${socialConfigss.title}`
