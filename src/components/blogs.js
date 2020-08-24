@@ -44,7 +44,7 @@ export default class Blogs extends Component {
           </ul>
           <div className="see-more">
             <Link to="/blogs">
-              <span>More Blogs</span>
+              <span>บล็อกเพิ่มเติม</span>
             </Link>
           </div>
         </div>
