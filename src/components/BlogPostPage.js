@@ -4,7 +4,7 @@ import Layout from "./layout";
 import SEO from "./seo";
 import Share from "./share";
 import YoutubeHolder from "./YoutubeHolder"
-import FacebookPage from "./FacebookPage"
+import FacebookPageBox from "./FacebookPageBox"
 
 const BlogPostPage = () => (
   <StaticQuery
@@ -34,7 +34,7 @@ const BlogPostPage = () => (
 	        <div className="site-container blog-post">
 	          <div className="container">
 							<YoutubeHolder/>
-							<FacebookPage/>
+							<FacebookPageBox/>
 							<br/>
 							<hr/>
 	            <Share

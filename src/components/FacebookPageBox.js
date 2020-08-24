@@ -1,6 +1,6 @@
 import React from "react"
 
-const FacebookPage = () => (
+const FacebookPageBox = () => (
 	
 	<div
 		className="fb-page"
@@ -27,4 +27,4 @@ const FacebookPage = () => (
 
 )
 
-export default FacebookPage
+export default FacebookPageBox
