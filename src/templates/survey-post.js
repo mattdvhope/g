@@ -20,7 +20,7 @@ export default class surveyPost extends Component {
       title: data.title
     };
 
-    const siteurl = this.props.data.contentfulSiteInformation.siteUrl + "/";
+    const siteurl = this.props.data.contentfulHomePage.siteUrl + "/";
     const socialConfigss = {
       site: {
         siteMetadata: { siteurl }
@@ -76,7 +76,7 @@ export const pageQuery = graphql`
       belowCta
       createdAt
     }
-    contentfulSiteInformation {
+    contentfulHomePage {
       siteUrl
     }
   }

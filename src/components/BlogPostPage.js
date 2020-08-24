@@ -11,7 +11,7 @@ const BlogPostPage = () => (
     query={detailsQuery}
     render={dataFromGraphQl => {
 			const data = dataFromGraphQl.contentfulBlogs
-	    const siteurl = dataFromGraphQl.contentfulSiteInformation.siteUrl + "/";
+	    const siteurl = dataFromGraphQl.contentfulHomePage.siteUrl + "/";
 	    const socialConfigss = {
 	      site: {
 	        siteMetadata: { siteurl }
@@ -79,7 +79,7 @@ const detailsQuery = graphql`
       }
       createdAt
     }
-    contentfulSiteInformation {
+    contentfulHomePage {
       siteUrl
     }
   }

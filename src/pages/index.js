@@ -21,39 +21,39 @@ const IndexPage = ({ data }) => {
         title={data.contentfulAboutMe.designation}
         keywords={[`ความเชื่อ`, `ความหวัง`, `ความรัก`]}
       />
-      <Banner data={data.contentfulAboutMe} socialLinkStatement={data.contentfulSiteInformation.socialLinkStatement} ></Banner>
+      <Banner data={data.contentfulAboutMe} socialLinkStatement={data.contentfulHomePage.socialLinkStatement} ></Banner>
 
-      {data.contentfulSiteInformation.menus
+      {data.contentfulHomePage.menus
         .filter(item => item === "About")
         .map(t => {
           return <About data={data.contentfulAboutMe} key={t}></About>;
         })}
 
-      {data.contentfulSiteInformation.menus
+      {data.contentfulHomePage.menus
         .filter(item => item === "Service")
         .map(t => {
           return <Service data={data.allContentfulService} key={t}></Service>;
         })}
 
-      {data.contentfulSiteInformation.menus
+      {data.contentfulHomePage.menus
         .filter(item => item === "Surveys")
         .map(t => {
           return <Surveys data={data.allContentfulSurveys} key={t}></Surveys>;
         })}
 
-      {data.contentfulSiteInformation.menus
+      {data.contentfulHomePage.menus
         .filter(item => item === "Blogs")
         .map(t => {
           return <Blogs data={data.allContentfulBlogs} key={t}></Blogs>;
         })}
 
-      {data.contentfulSiteInformation.menus
+      {data.contentfulHomePage.menus
         .filter(item => item === "Work")
         .map(t => {
           return <Work data={data.allContentfulWorks} key={t}></Work>;
         })}
 
-      {data.contentfulSiteInformation.menus
+      {data.contentfulHomePage.menus
         .filter(item => item === "Testimonials")
         .map(t => {
           return (
@@ -61,13 +61,13 @@ const IndexPage = ({ data }) => {
           );
         })}
 
-      {data.contentfulSiteInformation.menus
+      {data.contentfulHomePage.menus
         .filter(item => item === "Photos")
         .map(t => {
           return <Photos data={data.contentfulPhotos} key={t}></Photos>;
         })}
 
-      {data.contentfulSiteInformation.menus
+      {data.contentfulHomePage.menus
         .filter(item => item === "Contact")
         .map(t => {
           return <Contact data={data.contentfulAboutMe.gmail} key={t}></Contact>;
@@ -243,7 +243,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    contentfulSiteInformation {
+    contentfulHomePage {
       siteName
       socialLinkStatement
       menus

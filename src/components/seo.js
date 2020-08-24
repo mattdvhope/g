@@ -14,12 +14,12 @@ function SEO({ description, lang, meta, keywords, title, data }) {
               lang
             }}
             title={title}
-            titleTemplate={`${data.contentfulSiteInformation.siteName}`}
-            // titleTemplate={`%s | ${data.contentfulSiteInformation.siteName}`}
+            titleTemplate={`${data.contentfulHomePage.siteName}`}
+            // titleTemplate={`%s | ${data.contentfulHomePage.siteName}`}
             meta={[
               {
                 name: `description`,
-                content: data.contentfulSiteInformation.siteDescription
+                content: data.contentfulHomePage.siteDescription
               },
               {
                 property: `og:title`,
@@ -27,7 +27,7 @@ function SEO({ description, lang, meta, keywords, title, data }) {
               },
               {
                 property: `og:description`,
-                content: data.contentfulSiteInformation.siteDescription
+                content: data.contentfulHomePage.siteDescription
               },
               {
                 property: `og:image`,
@@ -35,7 +35,7 @@ function SEO({ description, lang, meta, keywords, title, data }) {
               },
               {
                 property: `og:url`,
-                content: data.contentfulSiteInformation.siteUrl
+                content: data.contentfulHomePage.siteUrl
               },
               {
                 property: `og:type`,
@@ -76,7 +76,7 @@ export default SEO;
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
-    contentfulSiteInformation {
+    contentfulHomePage {
       siteName
       siteUrl
       siteDescription
