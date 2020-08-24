@@ -95,6 +95,11 @@ const FormYoutubeSurvey = () => {
               <br/>
 			    		<h2>
 			    			{data.contentfulSurveysWithinPage.comment.comment}
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.contentfulSurveysWithinPage.comment.childMarkdownRemark.html
+                  }}
+                />
 			    		</h2>
 		    		</div>
 		    	)
@@ -124,7 +129,9 @@ const detailsQuery = graphql`
 	      }
 	    }
 	    comment {
-	      comment
+	      childMarkdownRemark {
+          html
+        }
 	    }
 	  }
   }
