@@ -58,26 +58,8 @@ export default BlogPostPage
 const detailsQuery = graphql`
   query BlogPostPageQuery {
     contentfulBlogs {
-      id
       title
       slug
-      featureImage {
-        fluid(maxWidth: 1500) {
-          base64
-          aspectRatio
-          src
-          srcSet
-          srcWebp
-          srcSetWebp
-          sizes
-        }
-      }
-      description {
-        childMarkdownRemark {
-          html
-        }
-      }
-      createdAt
     }
     contentfulHomePage {
       siteUrl
