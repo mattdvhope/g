@@ -56,8 +56,6 @@ const YoutubeHolder = () => {
 	  <StaticQuery
 	    query={detailsQuery}
 	    render={data => {
-				
-
 	      return (
 	        <div id="YoutubeHolder" className="container-fluid">
 	          <h2 style={{ color: `#BF8F63` }}><i>{data.contentfulSurveys.furtherCta}</i></h2>
