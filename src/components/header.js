@@ -133,7 +133,7 @@ export default class Header extends Component {
                   }}
                 >
                   <li>
-                    <Link to="/#home">Home</Link>
+                    <Link to="/#home">หน้าแรก</Link>
                   </li>
                   {data.menus
                     .filter(item => item === "Surveys")
@@ -149,7 +149,7 @@ export default class Header extends Component {
                     .map(t => {
                       return (
                         <li key={t}>
-                          <Link to="/blogs">Blogs</Link>
+                          <Link to="/blogs">บล็อก</Link>
                         </li>
                       );
                     })}
