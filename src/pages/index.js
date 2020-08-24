@@ -105,7 +105,6 @@ export const pageQuery = graphql`
       id
       instagram
       linkdin
-      twitter
       line
       location
       description {
