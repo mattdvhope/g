@@ -100,6 +100,25 @@ const detailsQuery = graphql`
 	      }
       }
     }
+
+    contentfulBlogs {
+      title
+      slug
+      ctaFirst
+      youtubeUrl
+      description {
+        childMarkdownRemark {
+          html
+        }
+      }
+      ctaLast {
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+    
+
   }
 `;
 

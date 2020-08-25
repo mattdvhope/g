@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Share from "../components/share";
-import YoutubeHolder from "../components/YoutubeHolder"
+import YoutubeHolder from "./YoutubeHolder"
 import FacebookPageBox from "../components/FacebookPageBox"
 
 const BlogPost = () => (

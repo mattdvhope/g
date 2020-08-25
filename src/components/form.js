@@ -2,11 +2,11 @@ import React, { Component } from "react"
 import { navigate } from "gatsby";
 import { graphql } from "gatsby";
 import axios from 'axios'
-import FormChoices from "./formChoices";
+import FormChoices from "../templates/formChoices";
 import { preventTooManyChoices, updatedQuestions, final_selections_of_choices } from "../utils/handleQuestionChoices"
 // import { persistQuestions } from "../utils/railsVisits" 
 import { getUser } from "../utils/auth"
-import YoutubeHolder from "./YoutubeHolder"
+import YoutubeHolder from "../templates/YoutubeHolder"
 
 export default class Form extends Component {
 	constructor(props) {
