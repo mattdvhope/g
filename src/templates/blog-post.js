@@ -53,7 +53,7 @@ const BlogPost = () => (
   />
 )
 
-export default BlogPostPage
+export default BlogPost
 
 const detailsQuery = graphql`
   query BlogPostPageQuery {
