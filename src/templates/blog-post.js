@@ -20,6 +20,8 @@ const BlogPost = () => (
         slug: data.slug
       };
 
+      console.log(dataFromGraphQl)
+
       return (
         <Layout>
           <SEO
@@ -56,10 +58,22 @@ const BlogPost = () => (
 export default BlogPost
 
 const detailsQuery = graphql`
-  query BlogPostPageQuery {
+  query BlogPostQuery {
     contentfulBlogs {
       title
       slug
+      ctaFirst
+      youtubeUrl
+      description {
+        childMarkdownRemark {
+          html
+        }
+      }
+      ctaLast {
+        childMarkdownRemark {
+          html
+        }
+      }
     }
     contentfulHomePage {
       siteUrl
