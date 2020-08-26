@@ -3,6 +3,7 @@ import { youtubeEmbeddable } from "../utils/youtubeEmbeddable"
 import FormYoutubeSurvey from "./formYoutubeSurvey"
 
 const YoutubeHolder = ({data}) => {
+
 	const oldWords = "คลิกที่นี่เพื่อแบ่งปันความคิดเกี่ยวกับวิดีโอนี้"
 	const newWords = "คลิกที่นี่เพื่อซ่อนคำถาม"
 	const [buttonPressed, setButtonState] = useState(false);
@@ -46,9 +47,17 @@ const YoutubeHolder = ({data}) => {
 		} else return null
 	}
 
-	return (
+  let el;
+
+  useEffect(() => {
+    el = data;
+  });
+
+console.log("over return")
+
+  return (
     <div id="YoutubeHolder" className="container-fluid">
-      <h2 style={{ color: `#BF8F63` }}><i>{data.ctaFirst}</i></h2>
+      <h2 style={{ color: `#BF8F63` }}><i>{data ? data.ctaFirst : "null"}</i></h2>
       <hr/>
 			<div>
 				<iframe // Youtube video 

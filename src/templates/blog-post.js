@@ -63,7 +63,6 @@ export const pageQuery = graphql`
           html
         }
       }
-      
       survey {
         id
         question
