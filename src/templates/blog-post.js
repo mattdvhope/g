@@ -1,72 +1,74 @@
-import React, { useState, useEffect } from "react"
-import { StaticQuery, graphql } from "gatsby";
+import React, { Component } from "react";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Share from "../components/share";
 import YoutubeHolder from "./YoutubeHolder"
 import FacebookPageBox from "../components/FacebookPageBox"
 
-const BlogPost = () => (
-  <StaticQuery
-    query={detailsQuery}
-    render={dataFromGraphQl => {
-      const data = dataFromGraphQl.contentfulBlogs
-      const siteurl = dataFromGraphQl.contentfulHomePage.siteUrl + "/";
-      const socialConfigss = {
-        site: {
-          siteMetadata: { siteurl }
-        },
-        title: data.title,
-        slug: data.slug
-      };
+export default class blogPost extends Component {
+  render() {
+    const data = this.props.data.contentfulBlogs;
+    const siteurl = this.props.data.contentfulHomePage.siteUrl + "/";
+    const socialConfigss = {
+      site: {
+        siteMetadata: { siteurl }
+      },
+      title: data.title,
+      slug: data.slug
+    };
 
-      console.log(dataFromGraphQl)
-
-      return (
-        <Layout>
-          <SEO
-            title={data.title}
-            keywords={[
-              `สายสัมพันธ์ ความสุข`,
-              `Frontend Developer`,
-              `Developer`,
-              `${data.title}`
-            ]}
-          />
-          <div className="site-container blog-post">
-            <div className="container">
-              <YoutubeHolder/>
-              <FacebookPageBox/>
-              <br/>
-              <hr/>
-              <Share
-                socialConfig={{
-                  config: {
-                    url: `${siteurl}${socialConfigss.slug}`,
-                    title: `${socialConfigss.title}`
-                  }
-                }}
-              />
-            </div>
+    return (
+      <Layout>
+        <SEO
+          title={data.title}
+          keywords={[
+            `สายสัมพันธ์ ความสุข`,
+            `Frontend Developer`,
+            `Developer`,
+            `${data.title}`
+          ]}
+        />
+        <div className="site-container blog-post">
+          <div className="container">
+            <YoutubeHolder data={data} />
+            <FacebookPageBox/>
+            <br/>
+            <hr/>
+            <Share
+              socialConfig={{
+                config: {
+                  url: `${siteurl}${socialConfigss.slug}`,
+                  title: `${socialConfigss.title}`
+                }
+              }}
+            />
           </div>
-        </Layout>
-      );
-    }}
-  />
-)
+        </div>
+      </Layout>
+    );
+  }
+}
 
-export default BlogPost
-
-const detailsQuery = graphql`
-  query BlogPostQuery {
-    contentfulBlogs {
-      title
+export const pageQuery = graphql`
+  query BlogPostQuery($slug: String!) {
+    contentfulBlogs(slug: {eq: $slug}) {
+      id
       slug
+      title
       ctaFirst
       youtubeUrl
       description {
         childMarkdownRemark {
           html
+        }
+      }
+      survey {
+        id
+        question
+        questionChoices {
+          id
+          choice
         }
       }
       ctaLast {
@@ -80,4 +82,3 @@ const detailsQuery = graphql`
     }
   }
 `;
-

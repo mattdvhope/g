@@ -3,16 +3,12 @@ import { StaticQuery, graphql } from "gatsby";
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable"
 import FormYoutubeSurvey from "./formYoutubeSurvey"
 
-const YoutubeHolder = () => {
+const YoutubeHolder = (data) => {
 	const oldWords = "คลิกที่นี่เพื่อแบ่งปันความคิดเกี่ยวกับวิดีโอนี้"
 	const newWords = "คลิกที่นี่เพื่อซ่อนคำถาม"
 	const [buttonPressed, setButtonState] = useState(false);
 	const [belowVideoThere, setBelowVideo] = useState(true);
-
-	// useEffect(() => {
- //    const posY = window.scrollY + document.getElementById("YoutubeHolder").getBoundingClientRect().top
- //    document.documentElement.scrollTop = posY - 65;
- //  });
+  const dt = data.data
 
 	let buttonElement;
 	if (buttonPressed === false) {
@@ -39,67 +35,44 @@ const YoutubeHolder = () => {
 		setBelowVideo(!needToPressForSurvey)
 	}
 
-	const formYT = buttonPressed ? <FormYoutubeSurvey/> : null;
+	const formYT = buttonPressed ? <FormYoutubeSurvey data={dt} /> : null;
 
 	function ElementBelowVideo(data) {
 		if (belowVideoThere) { 
 			return (
 				<div
           dangerouslySetInnerHTML={{
-            __html: data.contentfulBlogs.description.childMarkdownRemark.html
+            __html: data.description.childMarkdownRemark.html
           }}
         />)
 		} else return null
 	}
 
 	return (
-	  <StaticQuery
-	    query={detailsQuery}
-	    render={data => {
-	      return (
-	        <div id="YoutubeHolder" className="container-fluid">
-	          <h2 style={{ color: `#BF8F63` }}><i>{data.contentfulBlogs.ctaFirst}</i></h2>
-	          <hr/>
-						<div>
-							<iframe // Youtube video 
-								id="FrameHolder"
-					      style={{
-								  marginLeft: `auto`,
-								  marginRight: `auto`,
-					        height: `49vw`,
-					        width: `81vw`,
-					      }}
-                src={youtubeEmbeddable(data.contentfulBlogs.youtubeUrl)}
-					      frameBorder="0"
-					      allowFullScreen
-					    />
-							{buttonElement}
-							{formYT}
-							<hr/>
-					    {ElementBelowVideo(data)}
-					  </div>
-	        </div>
-	      );
-	    }}
-	  />
+    <div id="YoutubeHolder" className="container-fluid">
+      <h2 style={{ color: `#BF8F63` }}><i>{dt.ctaFirst}</i></h2>
+      <hr/>
+			<div>
+				<iframe // Youtube video 
+					id="FrameHolder"
+		      style={{
+					  marginLeft: `auto`,
+					  marginRight: `auto`,
+		        height: `49vw`,
+		        width: `81vw`,
+		      }}
+          src={youtubeEmbeddable(dt.youtubeUrl)}
+		      frameBorder="0"
+		      allowFullScreen
+		    />
+				{buttonElement}
+				{formYT}
+				<hr/>
+		    {ElementBelowVideo(dt)}
+		  </div>
+    </div>
 	)
 }
 
 export default YoutubeHolder
-
-const detailsQuery = graphql`
-  query YoutubeHolderQuery {
-    contentfulBlogs {
-      title
-      slug
-      ctaFirst
-      youtubeUrl
-      description {
-        childMarkdownRemark {
-          html
-        }
-      }
-    }
-  }
-`;
 
