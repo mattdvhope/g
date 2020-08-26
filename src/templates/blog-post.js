@@ -33,6 +33,8 @@ export default class blogPost extends Component {
         slug: data.slug
       };
 
+console.log(data)
+
       return (
         <Layout>
           <SEO

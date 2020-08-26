@@ -71,7 +71,7 @@ const YoutubeHolder = ({data}) => {
 		  </div>
     </div>
 	)
+
 }
 
 export default YoutubeHolder
-
