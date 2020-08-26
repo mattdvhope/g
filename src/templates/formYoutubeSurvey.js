@@ -25,13 +25,9 @@ const FormYoutubeSurvey = () => {
 	    query={detailsQuery}
 	    render={data => {
 
-				// const { questions } = data.contentfulSurveysWithinPage
         const { survey } = data.contentfulBlogs
 
-console.log("data:", data)
-
         if (!quests){
-          // setQuestions(questions)
           setQuestions(survey)
         }
 
@@ -52,9 +48,7 @@ console.log("data:", data)
           document.getElementById("button-for-youtube-survey").remove();
 
           axios.post(`${process.env.GATSBY_RAILS_ANON_SURVEYS}`, {
-            // contentful_id: data.contentfulSurveysWithinPage.id,
             contentful_id: data.contentfulBlogs.id,
-            // survey_title: data.contentfulSurveysWithinPage.title,
             survey_title: data.contentfulBlogs.title,
             questions: final_choices,
             fb_id: getUser().id,
@@ -72,7 +66,6 @@ console.log("data:", data)
 						<hr/>
 						<form onSubmit={handleSubmit} >
 	  					{survey.map((item) => {
-              // {survey.map((item) => {
 	  						return (
 	  							<div key={item.id}>
 	  							  <h3>
@@ -101,10 +94,8 @@ console.log("data:", data)
 		    		<div>
               <br/>
 			    		<h2>
-			    			{data.contentfulSurveysWithinPage.comment.comment}
                 <div
                   dangerouslySetInnerHTML={{
-                    // __html: data.contentfulSurveysWithinPage.comment.childMarkdownRemark.html
                     __html: data.contentfulBlogs.ctaLast.childMarkdownRemark.html
                   }}
                 />
@@ -112,7 +103,6 @@ console.log("data:", data)
 		    		</div>
 		    	)
 		    }
-
 	    }}
 	  />
 	)
@@ -124,24 +114,6 @@ export default FormYoutubeSurvey
 
 const detailsQuery = graphql`
   query YoutubeSurveyQuery {
-	  contentfulSurveysWithinPage(title: {eq: "Youtube1"}) {
-	    id
-	    title
-	    questions {
-	      id
-	      question
-	      questionChoices {
-	        id
-	        choice
-	      }
-	    }
-	    comment {
-	      childMarkdownRemark {
-          html
-        }
-	    }
-	  }
-
     contentfulBlogs(title: {eq: "พระเยซูคือใคร"}) {
       id
       title
@@ -159,7 +131,6 @@ const detailsQuery = graphql`
         }
       }
     }
-
   }
 `;
 
