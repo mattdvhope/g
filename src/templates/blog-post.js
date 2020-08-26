@@ -17,20 +17,22 @@ export default class blogPost extends Component {
 
   componentDidMount() {
     this.setState({ window: window })
+    console.log(this.props)
   }
 
   render() {
-    const data = this.props.data.contentfulBlogs;
-    const siteurl = this.props.data.contentfulHomePage.siteUrl + "/";
-    const socialConfigss = {
-      site: {
-        siteMetadata: { siteurl }
-      },
-      title: data.title,
-      slug: data.slug
-    };
-
     if (this.state.window) {
+
+      const data = this.props.data.contentfulBlogs;
+      const siteurl = this.props.data.contentfulHomePage.siteUrl + "/";
+      const socialConfigss = {
+        site: {
+          siteMetadata: { siteurl }
+        },
+        title: data.title,
+        slug: data.slug
+      };
+
       return (
         <Layout>
           <SEO
