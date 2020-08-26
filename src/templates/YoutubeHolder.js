@@ -55,30 +55,34 @@ const YoutubeHolder = ({data}) => {
 
 console.log("over return")
 
-  return (
-    <div id="YoutubeHolder" className="container-fluid">
-      <h2 style={{ color: `#BF8F63` }}><i>{data ? data.ctaFirst : "null"}</i></h2>
-      <hr/>
-			<div>
-				<iframe // Youtube video 
-					id="FrameHolder"
-		      style={{
-					  marginLeft: `auto`,
-					  marginRight: `auto`,
-		        height: `49vw`,
-		        width: `81vw`,
-		      }}
-          src={youtubeEmbeddable(data.youtubeUrl)}
-		      frameBorder="0"
-		      allowFullScreen
-		    />
-				{buttonElement}
-				{formYT}
-				<hr/>
-		    {ElementBelowVideo(data)}
-		  </div>
-    </div>
-	)
+  if (data) {
+    return (
+      <div id="YoutubeHolder" className="container-fluid">
+        <h2 style={{ color: `#BF8F63` }}><i>{data.ctaFirst}</i></h2>
+        <hr/>
+  			<div>
+  				<iframe // Youtube video 
+  					id="FrameHolder"
+  		      style={{
+  					  marginLeft: `auto`,
+  					  marginRight: `auto`,
+  		        height: `49vw`,
+  		        width: `81vw`,
+  		      }}
+            src={youtubeEmbeddable(data.youtubeUrl)}
+  		      frameBorder="0"
+  		      allowFullScreen
+  		    />
+  				{buttonElement}
+  				{formYT}
+  				<hr/>
+  		    {ElementBelowVideo(data)}
+  		  </div>
+      </div>
+  	)
+  } else {
+    return null;
+  }
 
 }
 
