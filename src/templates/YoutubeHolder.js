@@ -47,14 +47,6 @@ const YoutubeHolder = ({data}) => {
 		} else return null
 	}
 
-  let el;
-
-  useEffect(() => {
-    el = data;
-  });
-
-console.log("over return")
-
   if (data) {
     return (
       <div id="YoutubeHolder" className="container-fluid">
