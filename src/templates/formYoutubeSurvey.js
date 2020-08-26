@@ -119,7 +119,6 @@ const detailsQuery = graphql`
 	  contentfulSurveysWithinPage(title: {eq: "Youtube1"}) {
 	    id
 	    title
-	    subTitle
 	    questions {
 	      id
 	      question
@@ -134,6 +133,25 @@ const detailsQuery = graphql`
         }
 	    }
 	  }
+
+    contentfulBlogs(title: {eq: "พระเยซูคือใคร"}) {
+      id
+      title
+      survey {
+        id
+        question
+        questionChoices {
+          id
+          choice
+        }
+      }
+      ctaLast {
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+
   }
 `;
 

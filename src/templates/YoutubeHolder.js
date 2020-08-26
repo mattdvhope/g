@@ -46,7 +46,7 @@ const YoutubeHolder = () => {
 			return (
 				<div
           dangerouslySetInnerHTML={{
-            __html: data.contentfulSurveys.belowVideo.childMarkdownRemark.html
+            __html: data.contentfulBlogs.description.childMarkdownRemark.html
           }}
         />)
 		} else return null
@@ -58,8 +58,7 @@ const YoutubeHolder = () => {
 	    render={data => {
 	      return (
 	        <div id="YoutubeHolder" className="container-fluid">
-	          <h2 style={{ color: `#BF8F63` }}><i>{data.contentfulSurveys.furtherCta}</i></h2>
-	      {/* <p style={{ fontSize: `125%` }} >{data.contentfulSurveys.belowCta}</p>  */}
+	          <h2 style={{ color: `#BF8F63` }}><i>{data.contentfulBlogs.ctaFirst}</i></h2>
 	          <hr/>
 						<div>
 							<iframe // Youtube video 
@@ -70,7 +69,7 @@ const YoutubeHolder = () => {
 					        height: `49vw`,
 					        width: `81vw`,
 					      }}
-					      src={youtubeEmbeddable(data.contentfulSurveys.youtubeUrl)}
+                src={youtubeEmbeddable(data.contentfulBlogs.youtubeUrl)}
 					      frameBorder="0"
 					      allowFullScreen
 					    />
@@ -90,17 +89,6 @@ export default YoutubeHolder
 
 const detailsQuery = graphql`
   query YoutubeHolderQuery {
-    contentfulSurveys(slug: {}, belowVideo: {belowVideo: {}}) {
-			furtherCta
-      belowCta
-      youtubeUrl
-      belowVideo {
-        childMarkdownRemark {
-	        html
-	      }
-      }
-    }
-
     contentfulBlogs {
       title
       slug
@@ -111,14 +99,7 @@ const detailsQuery = graphql`
           html
         }
       }
-      ctaLast {
-        childMarkdownRemark {
-          html
-        }
-      }
     }
-    
-
   }
 `;
 
