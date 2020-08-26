@@ -104,8 +104,8 @@ console.log("data:", data)
 			    			{data.contentfulSurveysWithinPage.comment.comment}
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulSurveysWithinPage.comment.childMarkdownRemark.html
-                    // __html: data.contentfulBlogs.ctaLast.childMarkdownRemark.html
+                    // __html: data.contentfulSurveysWithinPage.comment.childMarkdownRemark.html
+                    __html: data.contentfulBlogs.ctaLast.childMarkdownRemark.html
                   }}
                 />
 			    		</h2>
