@@ -25,10 +25,14 @@ const FormYoutubeSurvey = () => {
 	    query={detailsQuery}
 	    render={data => {
 
-				const { questions } = data.contentfulSurveysWithinPage
+				// const { questions } = data.contentfulSurveysWithinPage
+        const { survey } = data.contentfulBlogs
+
+console.log("data:", data)
 
         if (!quests){
-          setQuestions(questions)
+          // setQuestions(questions)
+          setQuestions(survey)
         }
 
       	function handleChange(e) {
@@ -48,8 +52,10 @@ const FormYoutubeSurvey = () => {
           document.getElementById("button-for-youtube-survey").remove();
 
           axios.post(`${process.env.GATSBY_RAILS_ANON_SURVEYS}`, {
-            contentful_id: data.contentfulSurveysWithinPage.id,
-            survey_title: data.contentfulSurveysWithinPage.title,
+            // contentful_id: data.contentfulSurveysWithinPage.id,
+            contentful_id: data.contentfulBlogs.id,
+            // survey_title: data.contentfulSurveysWithinPage.title,
+            survey_title: data.contentfulBlogs.title,
             questions: final_choices,
             fb_id: getUser().id,
             line_id: getUser().sub
@@ -65,7 +71,8 @@ const FormYoutubeSurvey = () => {
 					<div className="container-fluid">
 						<hr/>
 						<form onSubmit={handleSubmit} >
-	  					{questions.map((item) => {
+	  					{survey.map((item) => {
+              // {survey.map((item) => {
 	  						return (
 	  							<div key={item.id}>
 	  							  <h3>
@@ -97,7 +104,8 @@ const FormYoutubeSurvey = () => {
 			    			{data.contentfulSurveysWithinPage.comment.comment}
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.contentfulSurveysWithinPage.comment.childMarkdownRemark.html
+                    // __html: data.contentfulSurveysWithinPage.comment.childMarkdownRemark.html
+                    __html: data.contentfulBlogs.ctaLast.childMarkdownRemark.html
                   }}
                 />
 			    		</h2>
