@@ -63,9 +63,6 @@ export default class blogPost extends Component {
     } else {
       return <span/>
     }
-
-
-
   }
 }
 
