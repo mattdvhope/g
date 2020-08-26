@@ -6,9 +6,8 @@ import { getUser } from "../utils/auth"
 import { preventTooManyChoices, updatedQuestions, final_selections_of_choices } from "../utils/handleQuestionChoices"
 import { rubyQuestions } from "../utils/rubyStyleObjs"
 
-const FormYoutubeSurvey = (data) => {
+const FormYoutubeSurvey = ({data}) => {
 
-  const dt = data.data
   const [questions, setQuestions] = useState(undefined);
   const [selected_in_question, setSelected] = useState([]);
   const [final_choices, setFinal] = useState([]);
@@ -19,7 +18,7 @@ const FormYoutubeSurvey = (data) => {
 		if (submitted) {document.documentElement.scrollTop = posY}
   });
 
-  const survey = dt.survey
+  const survey = data.survey
 
   if (!questions){
     setQuestions(survey)
@@ -42,8 +41,8 @@ const FormYoutubeSurvey = (data) => {
     document.getElementById("button-for-youtube-survey").remove();
 
     axios.post(`${process.env.GATSBY_RAILS_ANON_SURVEYS}`, {
-      contentful_id: dt.id,
-      survey_title: dt.title,
+      contentful_id: data.id,
+      survey_title: data.title,
       questions: final_choices,
       fb_id: getUser().id,
       line_id: getUser().sub
@@ -88,7 +87,7 @@ const FormYoutubeSurvey = (data) => {
     		<h2>
           <div
             dangerouslySetInnerHTML={{
-              __html: dt.ctaLast.childMarkdownRemark.html
+              __html: data.ctaLast.childMarkdownRemark.html
             }}
           />
     		</h2>

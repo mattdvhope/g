@@ -3,12 +3,11 @@ import { StaticQuery, graphql } from "gatsby";
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable"
 import FormYoutubeSurvey from "./formYoutubeSurvey"
 
-const YoutubeHolder = (data) => {
+const YoutubeHolder = ({data}) => {
 	const oldWords = "คลิกที่นี่เพื่อแบ่งปันความคิดเกี่ยวกับวิดีโอนี้"
 	const newWords = "คลิกที่นี่เพื่อซ่อนคำถาม"
 	const [buttonPressed, setButtonState] = useState(false);
 	const [belowVideoThere, setBelowVideo] = useState(true);
-  const dt = data.data
 
 	let buttonElement;
 	if (buttonPressed === false) {
@@ -35,7 +34,7 @@ const YoutubeHolder = (data) => {
 		setBelowVideo(!needToPressForSurvey)
 	}
 
-	const formYT = buttonPressed ? <FormYoutubeSurvey data={dt} /> : null;
+	const formYT = buttonPressed ? <FormYoutubeSurvey data={data} /> : null;
 
 	function ElementBelowVideo(data) {
 		if (belowVideoThere) { 
@@ -50,7 +49,7 @@ const YoutubeHolder = (data) => {
 
 	return (
     <div id="YoutubeHolder" className="container-fluid">
-      <h2 style={{ color: `#BF8F63` }}><i>{dt.ctaFirst}</i></h2>
+      <h2 style={{ color: `#BF8F63` }}><i>{data.ctaFirst}</i></h2>
       <hr/>
 			<div>
 				<iframe // Youtube video 
@@ -61,14 +60,14 @@ const YoutubeHolder = (data) => {
 		        height: `49vw`,
 		        width: `81vw`,
 		      }}
-          src={youtubeEmbeddable(dt.youtubeUrl)}
+          src={youtubeEmbeddable(data.youtubeUrl)}
 		      frameBorder="0"
 		      allowFullScreen
 		    />
 				{buttonElement}
 				{formYT}
 				<hr/>
-		    {ElementBelowVideo(dt)}
+		    {ElementBelowVideo(data)}
 		  </div>
     </div>
 	)
