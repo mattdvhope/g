@@ -65,6 +65,7 @@ const YoutubeHolder = ({data}) => {
   		      frameBorder="0"
   		      allowFullScreen
   		    />
+          <hr/>
   				{buttonElement}
   				{formYT}
   				<hr/>
