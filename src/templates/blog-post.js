@@ -3,7 +3,8 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Share from "../components/share";
-import YoutubeHolder from "./YoutubeHolder"
+// import YoutubeHolder from "./YoutubeHolder"
+import YoutubeHolderTempSimple from "./YoutubeHolderTempSimple"
 import FacebookPageBox from "../components/FacebookPageBox"
 
 export default class blogPost extends Component {
@@ -31,7 +32,7 @@ export default class blogPost extends Component {
         />
         <div className="site-container blog-post">
           <div className="container">
-            <YoutubeHolder data={data} />
+            <YoutubeHolderTempSimple data={data} />
             <FacebookPageBox/>
             <br/>
             <hr/>
