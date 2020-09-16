@@ -22,8 +22,6 @@ const YoutubeHolder = ({data}) => {
       />)
 	}
 
-console.log(data.ctaLast)
-
   if (data) {
     return (
       <div id="YoutubeHolder" className="container-fluid">
