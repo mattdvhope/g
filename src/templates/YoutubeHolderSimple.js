@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable"
 
-const YoutubeHolder = ({data}) => {
+const YoutubeHolderSimple = ({data}) => {
 
 	function ElementBelowVideo(data) {
 		return (
@@ -53,4 +53,4 @@ const YoutubeHolder = ({data}) => {
 
 }
 
-export default YoutubeHolder
+export default YoutubeHolderSimple
