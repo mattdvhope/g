@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable"
-import FormYoutubeSurvey from "./formYoutubeSurvey"
 
 const YoutubeHolder = ({data}) => {
 
