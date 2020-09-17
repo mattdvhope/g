@@ -36,7 +36,17 @@ const YoutubeHolder = ({data}) => {
 
 	const formYT = buttonPressed ? <FormYoutubeSurvey data={data} /> : null;
 
-	function ElementBelowVideo(data) {
+  function ButtonAndSurveyForm(data) {
+    if (data.survey) {
+      return (
+        <div><hr/>
+        {buttonElement}
+        {formYT}</div>
+      )
+    }
+  }
+
+	function Description(data) {
 		if (belowVideoThere) { 
 			return (
 				<div
@@ -46,6 +56,19 @@ const YoutubeHolder = ({data}) => {
         />)
 		} else return null
 	}
+
+  function ctaLast(data) {
+    if (!data.survey) {
+      return (
+        <div><hr/>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.ctaLast.childMarkdownRemark.html
+            }}
+          />
+        <hr/></div>)
+    }
+  }
 
   if (data) {
     return (
@@ -65,12 +88,11 @@ const YoutubeHolder = ({data}) => {
   		      frameBorder="0"
   		      allowFullScreen
   		    />
-          <hr/>
-  				{buttonElement}
-  				{formYT}
+          {ButtonAndSurveyForm(data)}
   				<hr/>
-  		    {ElementBelowVideo(data)}
+  		    {Description(data)}
   		  </div>
+        {ctaLast(data)}
       </div>
   	)
   } else {

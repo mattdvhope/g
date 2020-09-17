@@ -4,7 +4,6 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Share from "../components/share";
 import YoutubeHolder from "./YoutubeHolder"
-import YoutubeHolderSimple from "./YoutubeHolderSimple"
 import FacebookPageBox from "../components/FacebookPageBox"
 
 export default class blogPost extends Component {
@@ -16,16 +15,7 @@ export default class blogPost extends Component {
     };
   }
 
-  componentWithVideo(data) {
-    if (this.state.data.survey) {
-      return (<YoutubeHolder data={data} />)
-    } 
-    else if (!this.state.data.survey) {
-      return (<YoutubeHolderSimple data={data} />)
-    }
-  }
-
-  render() {
+   render() {
     const data = this.state.data;
     const siteurl = this.props.data.contentfulHomePage.siteUrl + "/";
     const socialConfigss = {
@@ -49,7 +39,7 @@ export default class blogPost extends Component {
         />
         <div className="site-container blog-post">
           <div className="container">
-            {this.componentWithVideo(data)}
+            <YoutubeHolder data={data} />
             <FacebookPageBox/>
             <br/>
             <hr/>
