@@ -39,22 +39,13 @@ console.log(data)
 	const formYT = buttonPressed ? <ResponsePrompt data={data} /> : null;
 
   function UnderVideo(data) {
-    if (data.responsePrompt) {
-      return (
-        <div>
-          <hr/>
-          {formYT}
-          {buttonElement}
-        </div>
-      )
-    } else {
-      return (
-        <div>
-        {Description(data)}
-        {ctaLast(data)}
-        </div>
-      )
-    }
+    return (
+      <div>
+      {Description(data)}
+      <hr/>
+      {ctaLast(data)}
+      </div>
+    )
   }
 
 	function Description(data) {
@@ -96,6 +87,7 @@ console.log(data)
   		      frameBorder="0"
   		      allowFullScreen
   		    />
+          <hr/>
           {UnderVideo(data)}
   				<hr/>
   		  </div>

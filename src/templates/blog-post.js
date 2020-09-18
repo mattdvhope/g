@@ -16,7 +16,15 @@ export default class blogPost extends Component {
     };
   }
 
-   render() {
+  YT(data) {
+    if (data.promptsForResponse) {
+      return (<YoutubeHolderPrompts data={data} />)
+    } else {
+      return (<YoutubeHolder data={data} />)
+    }
+  }
+
+  render() {
     const data = this.state.data;
     const siteurl = this.props.data.contentfulHomePage.siteUrl + "/";
     const socialConfigss = {
@@ -40,7 +48,7 @@ export default class blogPost extends Component {
         />
         <div className="site-container blog-post">
           <div className="container">
-            <YoutubeHolderPrompts data={data} />
+            {this.YT(data)}
             <FacebookPageBox/>
             <br/>
             <hr/>
