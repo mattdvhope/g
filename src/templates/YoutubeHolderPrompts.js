@@ -33,9 +33,7 @@ const YoutubeHolderPrompts = ({data}) => {
     </div>
   )
 
-  if (data) {
     return EveryButLastElement();
-  } 
 
 }
 
