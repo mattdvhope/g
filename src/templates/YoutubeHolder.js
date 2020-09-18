@@ -4,8 +4,6 @@ import ResponsePrompt from "./ResponsePrompt"
 
 const YoutubeHolder = ({data}) => {
 
-console.log(data)
-
 	const oldWords = "data.responsePrompt.buttonInvitation"
 	const newWords = "คลิกที่นี่เพื่อซ่อนคำถาม"
 	const [buttonPressed, setButtonState] = useState(false);
