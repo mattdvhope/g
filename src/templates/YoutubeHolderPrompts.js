@@ -1,82 +1,35 @@
 import React, { useState, useEffect } from "react"
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable"
+import YoutubeVideo from "./YoutubeVideo"
 import ResponsePrompt from "./ResponsePrompt"
 
 const YoutubeHolderPrompts = ({data}) => {
 
-console.log(data)
+  const prompts = data.promptsForResponse;
+  const firstPrompt = prompts[0];
+  const lastPrompt = prompts[prompts.length-1];
 
-	const oldWords = "data.responsePrompt.buttonInvitation"
-	const newWords = "คลิกที่นี่เพื่อซ่อนคำถาม"
-	const [buttonPressed, setButtonState] = useState(false);
-	const [belowVideoThere, setBelowVideo] = useState(true);
+// console.log(firstPrompt)
+// console.log(lastPrompt)
+console.log(YoutubeVideo)
 
-	let buttonElement;
-	if (buttonPressed === false) {
-		buttonElement = ButtonTemplate(true, oldWords)
-	} else {
-		buttonElement = ButtonTemplate(false, newWords)
-	}
-
-	function ButtonTemplate(needToPressForSurvey, wordsType) {
-		return (
-		<button
-			id="button-for-youtube-survey"
-			type="button"
-			className="btn btn-outline-success"
-			style={{ color: `brown`, borderColor: `#BF8F63`, backgroundColor: `#fff` }}
-			onClick={() => DealWithButtonPressing(needToPressForSurvey)}
-		>
-			{wordsType}
-		</button>
-	)}
-
-	function DealWithButtonPressing(needToPressForSurvey) {
-		setButtonState(needToPressForSurvey)
-		setBelowVideo(!needToPressForSurvey)
-	}
-
-	const formYT = buttonPressed ? <ResponsePrompt data={data} /> : null;
-
-  function UnderVideo(data) {
-    if (data.responsePrompt) {
-      return (
-        <div>
-          <hr/>
-          {formYT}
-          {buttonElement}
-        </div>
-      )
-    } else {
-      return (
-        <div>
-        {Description(data)}
-        {ctaLast(data)}
-        </div>
-      )
-    }
-  }
-
-	function Description(data) {
-		if (belowVideoThere) { 
-			return (
-				<div
-          dangerouslySetInnerHTML={{
-            __html: data.description.childMarkdownRemark.html
-          }}
-        />)
-		} else return null
-	}
-
-  function ctaLast(data) {
+  function ButtonTemplate() {
     return (
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.ctaLast.childMarkdownRemark.html
-        }}
-      />
-    )
-  }
+    <button
+      id="button-for-youtube-survey"
+      type="button"
+      className="btn btn-outline-success"
+      style={{ color: `brown`, borderColor: `#BF8F63`, backgroundColor: `#fff` }}
+      onClick={() => null}
+    >
+      {`BUTTON`}
+    </button>
+  )}
+
+  // function DealWithButtonPressing(needToPressForSurvey) {
+  //   setButtonState(needToPressForSurvey)
+  //   setBelowVideo(!needToPressForSurvey)
+  // }
 
   if (data) {
     return (
@@ -84,20 +37,14 @@ console.log(data)
         <h2 style={{ color: `#BF8F63` }}><i>{data.ctaFirst}</i></h2>
         <hr/>
   			<div>
-  				<iframe // Youtube video 
-  					id="FrameHolder"
-  		      style={{
-  					  marginLeft: `auto`,
-  					  marginRight: `auto`,
-  		        height: `49vw`,
-  		        width: `81vw`,
-  		      }}
-            src={youtubeEmbeddable(data.youtubeUrl)}
-  		      frameBorder="0"
-  		      allowFullScreen
-  		    />
-          {UnderVideo(data)}
+  				<YoutubeVideo src={youtubeEmbeddable(data.youtubeUrl)} />
   				<hr/>
+          <br/>
+
+          {ButtonTemplate()}
+
+          <br/>
+          <hr/>
   		  </div>
       </div>
   	)
