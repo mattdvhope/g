@@ -7,7 +7,7 @@ const ButtonForPrompt = ({onClick, buttonWords}) => {
       type="button"
       className="btn btn-outline-success"
       style={{ color: `brown`, borderColor: `#BF8F63`, backgroundColor: `#fff` }}
-      onClick={() => onClick}
+      onClick={onClick}
     >
       {buttonWords}
     </button>
