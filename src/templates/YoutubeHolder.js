@@ -16,7 +16,7 @@ const YoutubeHolder = ({data}) => {
 		buttonElement = ButtonTemplate(false, newWords)
 	}
 
-	function ButtonTemplate(needToPressForSurvey, wordsType) {
+	function ButtonTemplate(needToPressForSurvey, buttonWords) {
 		return (
 		<button
 			id="button-for-youtube-survey"
@@ -25,7 +25,7 @@ const YoutubeHolder = ({data}) => {
 			style={{ color: `brown`, borderColor: `#BF8F63`, backgroundColor: `#fff` }}
 			onClick={() => DealWithButtonPressing(needToPressForSurvey)}
 		>
-			{wordsType}
+			{buttonWords}
 		</button>
 	)}
 
