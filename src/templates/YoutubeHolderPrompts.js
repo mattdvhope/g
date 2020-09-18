@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable"
 import YoutubeVideo from "./YoutubeVideo"
+import ButtonForPrompt from "./ButtonForPrompt"
 import ResponsePrompt from "./ResponsePrompt"
 
 const YoutubeHolderPrompts = ({data}) => {
@@ -9,27 +10,16 @@ const YoutubeHolderPrompts = ({data}) => {
   const firstPrompt = prompts[0];
   const lastPrompt = prompts[prompts.length-1];
 
-// console.log(firstPrompt)
-// console.log(lastPrompt)
-console.log(YoutubeVideo)
+  // const [buttonPressed, setButtonState] = useState(false);
+  // const [buttonWords, setButtonWords] = useState(firstPrompt.buttonInvitation);
+  const [promptsElementNum, setPrompt] = useState(0);
 
-  function ButtonTemplate() {
-    return (
-    <button
-      id="button-for-youtube-survey"
-      type="button"
-      className="btn btn-outline-success"
-      style={{ color: `brown`, borderColor: `#BF8F63`, backgroundColor: `#fff` }}
-      onClick={() => null}
-    >
-      {`BUTTON`}
-    </button>
-  )}
 
-  // function DealWithButtonPressing(needToPressForSurvey) {
-  //   setButtonState(needToPressForSurvey)
-  //   setBelowVideo(!needToPressForSurvey)
-  // }
+
+  function DealWithButtonPressing() {
+    console.log("pressed!!!!")
+    // setPrompt(promptsElementNum + 1)
+  }
 
   if (data) {
     return (
@@ -38,10 +28,10 @@ console.log(YoutubeVideo)
         <hr/>
   			<div>
   				<YoutubeVideo src={youtubeEmbeddable(data.youtubeUrl)} />
-  				<hr/>
+          <hr/>
           <br/>
 
-          {ButtonTemplate()}
+          <ButtonForPrompt onClick={() => DealWithButtonPressing(true)} buttonWords={prompts[promptsElementNum].buttonInvitation} />
 
           <br/>
           <hr/>
