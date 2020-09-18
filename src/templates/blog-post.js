@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Share from "../components/share";
 import YoutubeHolder from "./YoutubeHolder"
+import YoutubeHolderPrompts from "./YoutubeHolderPrompts"
 import FacebookPageBox from "../components/FacebookPageBox"
 
 export default class blogPost extends Component {
@@ -39,7 +40,7 @@ export default class blogPost extends Component {
         />
         <div className="site-container blog-post">
           <div className="container">
-            <YoutubeHolder data={data} />
+            <YoutubeHolderPrompts data={data} />
             <FacebookPageBox/>
             <br/>
             <hr/>
@@ -84,6 +85,21 @@ export const pageQuery = graphql`
           html
         }
       }
+
+
+
+      promptsForResponse {
+        promptContent {
+          childMarkdownRemark {
+            html
+          }
+        }
+        buttonInvitation
+        orderNumber
+      }
+
+
+
     }
     contentfulHomePage {
       siteUrl
