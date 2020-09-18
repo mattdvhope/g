@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable"
 import ResponsePrompt from "./ResponsePrompt"
 
-const YoutubeHolder = ({data}) => {
+const YoutubeHolderPrompts = ({data}) => {
 
 console.log(data)
 
@@ -80,7 +80,7 @@ console.log(data)
 
   if (data) {
     return (
-      <div id="YoutubeHolder" className="container-fluid">
+      <div id="YoutubeHolderPrompts" className="container-fluid">
         <h2 style={{ color: `#BF8F63` }}><i>{data.ctaFirst}</i></h2>
         <hr/>
   			<div>
@@ -107,4 +107,4 @@ console.log(data)
 
 }
 
-export default YoutubeHolder
+export default YoutubeHolderPrompts
