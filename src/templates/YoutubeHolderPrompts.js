@@ -27,7 +27,9 @@ const YoutubeHolderPrompts = ({data}) => {
     } else if (promptsElementNum === prompts.length-1) {
       return (
         <div>
+          <br/>
           <h1 onClick={() => setPrompt(promptsElementNum - 1)} >⬅️&nbsp;</h1>
+          <br/>
         </div>)
     }
   }
