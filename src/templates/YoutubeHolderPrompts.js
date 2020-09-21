@@ -20,7 +20,7 @@ const YoutubeHolderPrompts = ({data}) => {
       return (
         <div>
           <hr/>
-          <h2 onClick={() => setPrompt(promptsElementNum - 1)} >⬅️&nbsp;&nbsp;</h2>
+          <h2 onClick={() => setPrompt(promptsElementNum - 1)} >⬅️&nbsp;</h2>
           <ButtonForPrompt onClick={() => setPrompt(promptsElementNum + 1)} buttonWords={buttonWords} />
           <hr/>
         </div>)
