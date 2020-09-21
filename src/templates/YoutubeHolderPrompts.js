@@ -7,18 +7,33 @@ const YoutubeHolderPrompts = ({data}) => {
 
   const prompts = data.promptsForResponse;
   const [promptsElementNum, setPrompt] = useState(0);
+  const buttonWords = prompts[promptsElementNum].buttonInvitation;
   const ButtonProvidedIfNeeded = () => {
-    if (promptsElementNum !== prompts.length-1) {
-      return (<ButtonForPrompt onClick={() => setPrompt(promptsElementNum + 1)} buttonWords={prompts[promptsElementNum].buttonInvitation} />)
-    } else {
-      return (<div dangerouslySetInnerHTML={{ __html: data.ctaLast.childMarkdownRemark.html }} />)
+    if (promptsElementNum === 0) {
+      return (
+        <div>
+          <hr/>
+          <ButtonForPrompt onClick={() => setPrompt(promptsElementNum + 1)} buttonWords={buttonWords} />
+          <hr/>
+        </div>)
+    } else if (promptsElementNum !== prompts.length-1) {
+      return (
+        <div>
+          <hr/>
+          <h2 onClick={() => setPrompt(promptsElementNum - 1)} >⬅️&nbsp;</h2>
+          <ButtonForPrompt onClick={() => setPrompt(promptsElementNum + 1)} buttonWords={buttonWords} />
+          <hr/>
+        </div>)
+    } else if (promptsElementNum === prompts.length-1) {
+      return (
+        <div>
+          <h1 onClick={() => setPrompt(promptsElementNum - 1)} >⬅️&nbsp;</h1>
+        </div>)
     }
   }
 
   return (
     <div id="YoutubeHolderPrompts" className="container-fluid">
-      <h2 style={{ color: `#BF8F63` }}><i>{data.ctaFirst}</i></h2>
-      <hr/>
       <div>
         <YoutubeVideo src={youtubeEmbeddable(data.youtubeUrl)} />
         <hr/>
@@ -27,9 +42,7 @@ const YoutubeHolderPrompts = ({data}) => {
             __html: prompts[promptsElementNum].promptContent.childMarkdownRemark.html
           }}
         />
-        <hr/>
         {ButtonProvidedIfNeeded()}
-        <hr/>
       </div>
     </div>
   )
