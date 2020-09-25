@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable"
 import YoutubeVideo from "./YoutubeVideo"
 import ButtonForPrompt from "./ButtonForPrompt"
+import CtaUnderVideo from "./CtaUnderVideo"
 
 const YoutubeHolderPrompts = ({data}) => {
 
@@ -29,7 +30,7 @@ const YoutubeHolderPrompts = ({data}) => {
         <div>
           <br/>
           <h1 onClick={() => setPrompt(promptsElementNum - 1)} >⬅️&nbsp;</h1>
-          <br/>
+          <hr/>
         </div>)
     }
   }
@@ -46,6 +47,7 @@ const YoutubeHolderPrompts = ({data}) => {
         />
         {ButtonProvidedIfNeeded()}
       </div>
+      <CtaUnderVideo data={data} />
     </div>
   )
 
