@@ -18,7 +18,7 @@ export default ({ data }) => (
               {data.designation}
             </h2>
             
-            <div
+      {/* <div
               className="fb-like"
               data-href="https://relationshipsthailand.org/"
               data-width=""
@@ -27,7 +27,7 @@ export default ({ data }) => (
               data-size="large"
               data-share="true"
               style={{ border: `none`, overflow: `hidden`, height: `31px` }}
-            />
+            />  */}      
 
             <div class="mcwidget-embed" data-widget-id="13149017"></div>
 
