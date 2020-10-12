@@ -29,6 +29,8 @@ export default ({ data }) => (
               style={{ border: `none`, overflow: `hidden`, height: `31px` }}
             />
 
+            <div class="mcwidget-embed" data-widget-id="13149017"></div>
+
             <hr/>
             <div
               dangerouslySetInnerHTML={{
