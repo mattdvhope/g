@@ -40,6 +40,11 @@ const Layout = ({ children, header }) => {
               src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v7.0&appId=611958516129057&autoLogAppEvents=1"
               nonce="PFVZXkQp"
             />
+
+            <script
+              src="//widget.manychat.com/106619367753772.js"
+              async="async"
+            />
           </Helmet>
           <Header
             data={data.contentfulHomePage}
