@@ -49,6 +49,7 @@ export default class blogPost extends Component {
         <div className="site-container blog-post">
           <div className="container">
             {this.YT(data)}
+            <hr/>
             <div class="mcwidget-embed" data-widget-id="13149017"></div>
             <hr/>
             <FacebookPageBox/>
