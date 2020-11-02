@@ -149,7 +149,7 @@ export default class Header extends Component {
                     .map(t => {
                       return (
                         <li key={t}>
-                          <Link to="/blogs">วิดีโอ</Link>
+                          <Link to="/videos">วิดีโอ</Link>
                         </li>
                       );
                     })}

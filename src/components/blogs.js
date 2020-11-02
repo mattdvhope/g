@@ -43,7 +43,7 @@ export default class Blogs extends Component {
             })}
           </ul>
           <div className="see-more">
-            <Link to="/blogs">
+            <Link to="/videos">
               <span>วิดีโอเพิ่มเติม</span>
             </Link>
           </div>
