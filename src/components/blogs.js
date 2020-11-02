@@ -10,7 +10,7 @@ export default class Blogs extends Component {
       <div className="blogs-section section" id="Blogs">
         <div className="container">
           <div className="section-head">
-            <h2>บล็อก</h2>
+            <h2>วิดีโอ</h2>
           </div>
           <ul
             className={`blogs-list ${data.edges.length < 5 ? "few-blogs" : ""}`}
@@ -44,7 +44,7 @@ export default class Blogs extends Component {
           </ul>
           <div className="see-more">
             <Link to="/blogs">
-              <span>บล็อกเพิ่มเติม</span>
+              <span>วิดีโอเพิ่มเติม</span>
             </Link>
           </div>
         </div>
