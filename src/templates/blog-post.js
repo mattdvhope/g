@@ -41,7 +41,7 @@ export default class blogPost extends Component {
           title={data.title}
           keywords={[
             `สายสัมพันธ์ ความสุข`,
-            `Frontend Developer`,
+            `Frontend Developer `,
             `Developer`,
             `${data.title}`
           ]}
