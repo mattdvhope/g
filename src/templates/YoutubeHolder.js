@@ -39,8 +39,8 @@ const YoutubeHolder = ({data}) => {
   function UnderVideo(data) {
     return (
       <div>
-        <div class="mcwidget-embed" data-widget-id="13149017"></div>
-        <hr/>
+    {/* <div class="mcwidget-embed" data-widget-id="13149017"></div>
+        <hr/>  */}
         {Description(data)}
         <hr/>
         {ctaLast(data)}

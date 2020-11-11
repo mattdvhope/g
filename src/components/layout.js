@@ -41,10 +41,10 @@ const Layout = ({ children, header }) => {
               nonce="PFVZXkQp"
             />
 
-            <script
+        {/* <script
               src="//widget.manychat.com/106619367753772.js"
               async="async"
-            />
+            />  */}
           </Helmet>
           <Header
             data={data.contentfulHomePage}
