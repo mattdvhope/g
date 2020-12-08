@@ -25,7 +25,7 @@ export default class Banner extends Component {
   GatsbyLink() {
     return (
       <a 
-        href={`blind-see`}
+        href={`i-am`}
         style={this.state.linkColor}
         onClick='FB.AppEvents.logEvent("GatsbyLinkClicked")'
       >
