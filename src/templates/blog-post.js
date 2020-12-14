@@ -38,7 +38,7 @@ export default class blogPost extends Component {
       <Layout>
         <SEO
           title={data.title}
-          videoCover={data.featureImage.file.fileName}
+          videoCover={data.featureImage.fluid.src}
           keywords={[
             `สายสัมพันธ์ ความสุข`,
             `Frontend Developer`,
@@ -81,11 +81,13 @@ export const pageQuery = graphql`
           html
         }
       }
+
       featureImage {
-        file {
-          fileName
+        fluid {
+          src
         }
       }
+
       survey {
         id
         question
