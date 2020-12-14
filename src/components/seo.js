@@ -16,7 +16,6 @@ function SEO({ description, lang, meta, keywords, title, videoCover, data }) {
             }}
             title={title}
             titleTemplate={`${data.contentfulHomePage.siteName}`}
-            // titleTemplate={`%s | ${data.contentfulHomePage.siteName}`}
             meta={[
               {
                 name: `description`,
