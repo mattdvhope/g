@@ -34,11 +34,11 @@ export default class blogPost extends Component {
       title: data.title,
       slug: data.slug
     };
-
     return (
       <Layout>
         <SEO
           title={data.title}
+          videoCover={data.featureImage.file.fileName}
           keywords={[
             `สายสัมพันธ์ ความสุข`,
             `Frontend Developer`,
@@ -79,6 +79,11 @@ export const pageQuery = graphql`
       description {
         childMarkdownRemark {
           html
+        }
+      }
+      featureImage {
+        file {
+          fileName
         }
       }
       survey {

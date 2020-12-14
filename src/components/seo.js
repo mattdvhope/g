@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, keywords, title, data }) {
+function SEO({ description, lang, meta, keywords, title, videoCover, data }) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
+        const image = videoCover || `https://relate.s3-ap-southeast-1.amazonaws.com/sheep-flock-mountain-512x512.jpg`;
         return (
           <Helmet
             htmlAttributes={{
@@ -31,7 +32,7 @@ function SEO({ description, lang, meta, keywords, title, data }) {
               },
               {
                 property: `og:image`,
-                content: `https://relate.s3-ap-southeast-1.amazonaws.com/sheep-flock-mountain-512x512.jpg`
+                content: image
               },
               {
                 property: `og:url`,
