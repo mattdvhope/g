@@ -22,7 +22,6 @@ export default class Banner extends Component {
     this.setState({ window: window })
   }
 
-
   GatsbyLink() {
     return (
       <a 
