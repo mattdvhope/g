@@ -22,6 +22,7 @@ export default class Banner extends Component {
     this.setState({ window: window })
   }
 
+
   GatsbyLink() {
     return (
       <a 
@@ -33,6 +34,7 @@ export default class Banner extends Component {
       </a>
     )
   }
+
 
   render() {
     const { data } = this.props;
