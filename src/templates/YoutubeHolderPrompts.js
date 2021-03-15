@@ -10,9 +10,7 @@ const YoutubeHolderPrompts = ({data}) => {
   const [promptsElementNum, setPrompt] = useState(0);
   const buttonWords = prompts[promptsElementNum].buttonInvitation;
 
-  const scrollToTopOfBlog = () => { // after each button-click, it will jump to the top of the blog page
-    window.scrollTo(0, 0);
-  }
+  const scrollToTopOfBlog = () => window.innerWidth < 1000 ? window.scrollTo(0, 0) : null
 
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
