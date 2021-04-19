@@ -41,11 +41,11 @@ const Layout = ({ children, header }) => {
               nonce="PFVZXkQp"
             />
 
-        {/* <script
-              src="//widget.manychat.com/106619367753772.js"
-              async="async"
-            />  */}
+            {/* ManyChat */}
+            <script src="//widget.manychat.com/106619367753772.js" defer="defer"></script>
+            <script src="https://mccdn.me/assets/js/widget.js" defer="defer"></script>
           </Helmet>
+
           <Header
             data={data.contentfulHomePage}
             siteTitle={data.contentfulHomePage.siteName}
