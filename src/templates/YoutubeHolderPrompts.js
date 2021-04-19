@@ -18,7 +18,6 @@ const YoutubeHolderPrompts = ({data}) => {
         <div>
           <hr/>
           <ButtonForPrompt onClick={() => { setPrompt(promptsElementNum + 1); scrollToTopOfBlog(); }} buttonWords={buttonWords} />
-          <hr/>
         </div>)
     } else if (promptsElementNum !== prompts.length-1) {
       return (
@@ -26,14 +25,12 @@ const YoutubeHolderPrompts = ({data}) => {
           <hr/>
           <h2 onClick={() => { setPrompt(promptsElementNum - 1); scrollToTopOfBlog(); }} >⬅️&nbsp;</h2>
           <ButtonForPrompt onClick={() => { setPrompt(promptsElementNum + 1); scrollToTopOfBlog(); }} buttonWords={buttonWords} />
-          <hr/>
         </div>)
     } else if (promptsElementNum === prompts.length-1) {
       return (
         <div>
           <br/>
           <h1 onClick={() => { setPrompt(promptsElementNum - 1); scrollToTopOfBlog(); }} >⬅️&nbsp;</h1>
-          <hr/>
         </div>)
     }
   }
@@ -50,10 +47,6 @@ const YoutubeHolderPrompts = ({data}) => {
         />
         {ButtonProvidedIfNeeded()}
       </div>
-
-  {/* <div style={{position: `relative`, width: `150px`}} className="mcwidget-embed" data-widget-id="13149017"></div>
-      <hr/>    */}
-      <CtaUnderVideo data={data} />
     </div>
   )
 
