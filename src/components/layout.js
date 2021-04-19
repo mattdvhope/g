@@ -41,9 +41,10 @@ const Layout = ({ children, header }) => {
               nonce="PFVZXkQp"
             />
 
-            {/* ManyChat */}
+            {/*
             <script src="//widget.manychat.com/106619367753772.js" defer="defer"></script>
             <script src="https://mccdn.me/assets/js/widget.js" defer="defer"></script>
+              */}
           </Helmet>
 
           <Header
