@@ -7,7 +7,6 @@ import Header from "./header";
 import Footer from "./footer";
 import "../css/style.css";
 import "../css/font-awesome.css";
-import { MsChatPluginCode } from "../utils/MsChatPluginCode"
 
 if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]');
@@ -42,6 +41,31 @@ const Layout = ({ children, header }) => {
               nonce="PFVZXkQp"
             />
 
+            {/* FB Messenger Chat Plugin Code */}
+            <script
+              dangerouslySetInnerHTML={{ __html: `
+                window.fbAsyncInit = function() {
+                  window.FB.init({
+                    xfbml            : true,
+                    version          : 'v10.0'
+                  });
+                };
+
+                (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = 'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js';
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+              `}}
+            />
+
+            {/* Your FB Chat Plugin code */}
+            <div class="fb-customerchat"
+              attribution="page_inbox"
+              page_id="106619367753772">
+            </div>
           </Helmet>
 
           <Header
