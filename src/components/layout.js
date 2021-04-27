@@ -42,7 +42,7 @@ const Layout = ({ children, header }) => {
             />
 
             {/* FB Messenger Chat Plugin Code */}
-            <script
+      {/*   <script
               dangerouslySetInnerHTML={{ __html: `
                 window.fbAsyncInit = function() {
                   window.FB.init({
@@ -59,13 +59,13 @@ const Layout = ({ children, header }) => {
                   fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));
               `}}
-            />
+            />  */}
 
             {/* Your FB Chat Plugin code */}
-            <div class="fb-customerchat"
+      {/*   <div class="fb-customerchat"
               attribution="page_inbox"
               page_id="106619367753772">
-            </div>
+            </div>  */}
           </Helmet>
 
           <Header
