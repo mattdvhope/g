@@ -7,6 +7,7 @@ import Header from "./header";
 import Footer from "./footer";
 import "../css/style.css";
 import "../css/font-awesome.css";
+import { MsChatPluginCode } from "../utils/MsChatPluginCode"
 
 if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]');
@@ -40,6 +41,15 @@ const Layout = ({ children, header }) => {
               src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v7.0&appId=611958516129057&autoLogAppEvents=1"
               nonce="PFVZXkQp"
             />
+
+            {/* FB Messenger Chat Plugin Code */}
+            <script src={MsChatPluginCode} type="text/javascript" />
+
+            {/* Your FB Chat Plugin code */}
+            <div class="fb-customerchat"
+              attribution="page_inbox"
+              page_id="106619367753772">
+            </div>
           </Helmet>
 
           <Header
