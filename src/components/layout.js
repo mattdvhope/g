@@ -42,14 +42,6 @@ const Layout = ({ children, header }) => {
               nonce="PFVZXkQp"
             />
 
-            {/* FB Messenger Chat Plugin Code */}
-            <script src={MsChatPluginCode} type="text/javascript" />
-
-            {/* Your FB Chat Plugin code */}
-            <div class="fb-customerchat"
-              attribution="page_inbox"
-              page_id="106619367753772">
-            </div>
           </Helmet>
 
           <Header
