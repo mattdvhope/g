@@ -1,4 +1,7 @@
 import React from "react"
+
+
+// This is for the website FB Chat Messenger (on bottom-right of website)
 export const onRenderBody = (
   { setPreBodyComponents },
   pluginOptions
