@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import qs from 'qs';
+import { sha256 } from 'js-sha256';
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable";
 import YoutubeVideo from "./YoutubeVideo";
 import ButtonForPrompt from "./ButtonForPrompt";
@@ -18,6 +18,9 @@ const YoutubeHolderPrompts = ({data}) => {
 
   const FbConversionEvent = () => {
     const urlOfEvent = "https://relationshipsthailand.org/" + data.slug;
+    const fbFirstName = sha256('Matt'); // this is according to FB's rull of using a hashed version of user_data strings
+    const fbLastName = sha256('Malone');
+
     const dataFromEvent = 
       {
         "data": [
@@ -27,10 +30,10 @@ const YoutubeHolderPrompts = ({data}) => {
                 "action_source": "website",
                 "event_source_url": urlOfEvent,
                 "user_data": {
-                    "fn": "78675cc176081372c43abab3ea9fb70c74381eb02dc6e93fb6d44d161da6eeb3",
-                    "ln": "6627835f988e2c5e50533d491163072d3f4f41f5c8b04630150debb3722ca2dd",
-                    "fb_login_id": 12345,
-                    "client_user_agent": "Matt"
+                    "fn": fbFirstName,
+                    "ln": fbLastName,
+                    "fb_login_id": 1577295302,
+                    "client_user_agent": "RelationshipsThailand"
                 }
             }
         ]
