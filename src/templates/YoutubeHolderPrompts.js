@@ -18,8 +18,8 @@ const YoutubeHolderPrompts = ({data}) => {
 
   const FbConversionEvent = () => { // To record Conversion Events in FB Events Manager / Pixel
     const urlOfEvent = "https://relationshipsthailand.org/" + data.slug;
-    const fbFirstName = sha256('Matt'); // this is according to FB's rule of using a hashed version of user_data
-    const fbLastName = sha256('Malone');
+    const fbFirstName = sha256('matt'); // this is according to FB's rule of using a hashed version of user_data
+    const fbLastName = sha256('malone');
 
     const dataFromEvent = 
       {
