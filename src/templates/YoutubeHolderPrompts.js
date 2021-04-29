@@ -16,9 +16,9 @@ const YoutubeHolderPrompts = ({data}) => {
 
   console.log("Contentful Data: ", data);
 
-  const FbConversionEvent = () => {
+  const FbConversionEvent = () => { // To record Conversion Events in FB Events Manager / Pixel
     const urlOfEvent = "https://relationshipsthailand.org/" + data.slug;
-    const fbFirstName = sha256('Matt'); // this is according to FB's rull of using a hashed version of user_data strings
+    const fbFirstName = sha256('Matt'); // this is according to FB's rule of using a hashed version of user_data
     const fbLastName = sha256('Malone');
 
     const dataFromEvent = 
@@ -34,6 +34,9 @@ const YoutubeHolderPrompts = ({data}) => {
                     "ln": fbLastName,
                     "fb_login_id": 1577295302,
                     "client_user_agent": "RelationshipsThailand"
+                },
+                "custom_data": {
+                  "thisThing": "it"
                 }
             }
         ]
