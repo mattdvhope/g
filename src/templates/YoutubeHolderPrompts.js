@@ -17,6 +17,7 @@ const YoutubeHolderPrompts = ({data}) => {
   console.log("Contentful Data: ", data);
 
   const FbConversionEvent = () => { // To record Conversion Events in FB Events Manager / Pixel
+    const timestamp = Math.round(Date.now() / 1000);
     const urlOfEvent = "https://relationshipsthailand.org/" + data.slug;
     const fbFirstName = sha256('matt'); // this is according to FB's rule of using a hashed version of user_data
     const fbLastName = sha256('malone');
@@ -26,7 +27,7 @@ const YoutubeHolderPrompts = ({data}) => {
         "data": [
             {
                 "event_name": "Reading",
-                "event_time": 1619693105,
+                "event_time": timestamp,
                 "action_source": "website",
                 "event_source_url": urlOfEvent,
                 "user_data": {
