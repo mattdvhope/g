@@ -14,8 +14,6 @@ const YoutubeHolderPrompts = ({data}) => {
 
   const scrollToTopOfBlog = () => window.innerWidth < 1000 ? window.scrollTo(0, 0) : null
 
-  console.log("Contentful Data: ", data);
-
   const FbConversionEvent = () => { // To record Conversion Events in FB Events Manager / Pixel
     const timestamp = Math.round(Date.now() / 1000);
     const urlOfEvent = "https://relationshipsthailand.org/" + data.slug;
