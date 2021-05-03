@@ -43,7 +43,7 @@ const YoutubeHolderPrompts = ({data}) => {
         ]
       };
 
-    const url = "https://graph.facebook.com/v10.0/222946198915072/events?access_token=EAACYmSXRUF0BAFdhl36TI7FrOUx9uEitzbuXWUZAIMYE0f4qiuNzYvKWZATdbWGeES5BE8ivcMR8GjDhVKIb0ZBuHznBdQ0wB7aUn5ZAaOZCim7f4LOVltFaxuOsg6rUVOxR5UxF3C9pbCYY7dDIFG0L3UcHhVRBgq5ZCa7DN00C1c8TLD0V8AutKXzRTIEZA4ZD";
+    const url = `https://graph.facebook.com/v10.0/${process.env.GATSBY_PIXEL_ID}/events?access_token=${process.env.GATSBY_PIXEL_ACCESS_TOKEN}`;
 
     axios.post(url, dataFromEvent)
     .then(response => {
