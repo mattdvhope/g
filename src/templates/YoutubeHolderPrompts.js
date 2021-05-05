@@ -36,7 +36,7 @@ const YoutubeHolderPrompts = ({data}) => {
                     "client_user_agent": "RelationshipsThailand"
                 },
                 "custom_data": {
-                  "thisThing": "it"
+                  "thisThing": "it" // use this in the RULE in Custom Conversions!!!
                 }
             }
         ],
