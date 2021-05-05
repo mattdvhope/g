@@ -38,7 +38,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-facebook-analytics`,
+      resolve: `gatsby-plugin-facebook-analytics`, // This is going away from FB soon...useless soon!!
       options: {
         // Required - set this to the ID of your Facebook app.
         appId: `611958516129057`,
