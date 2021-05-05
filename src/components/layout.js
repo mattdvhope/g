@@ -32,8 +32,8 @@ const Layout = ({ children, header }) => {
       `}
       
       render={data => (
-        <>
-          <Helmet>
+        <> {/* Note: FB Pixel is a plugin at 'gatsby-config.js' */}
+          <Helmet> {/* 1. FB SDK for app (login, etc), 2. FB domain verification */}
             <div id="fb-root"></div>
             <script async defer
               crossorigin="anonymous"
