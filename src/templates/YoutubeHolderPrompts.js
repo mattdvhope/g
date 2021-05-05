@@ -25,7 +25,7 @@ const YoutubeHolderPrompts = ({data}) => {
       {
         "data": [
             {
-                "event_name": "ReadingMore",
+                "event_name": "Reading",
                 "event_time": timestamp,
                 "action_source": "website",
                 "event_source_url": urlOfEvent,
