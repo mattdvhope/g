@@ -29,8 +29,8 @@ const YoutubeHolderPrompts = ({data}) => {
                 "action_source": "website",
                 "event_source_url": urlOfEvent,
                 "user_data": {
-                    "fn": fbFirstName,
-                    "ln": fbLastName,
+                    // "fn": fbFirstName,
+                    // "ln": fbLastName,
                     "fb_login_id": 1577295511, // not me!!
                     "client_user_agent": "RelationshipsThailand"
                 },
