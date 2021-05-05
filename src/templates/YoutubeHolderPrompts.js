@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { sha256 } from 'js-sha256';
+import { fbq } from 'gatsby-plugin-facebook-pixel';
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable";
 import YoutubeVideo from "./YoutubeVideo";
 import ButtonForPrompt from "./ButtonForPrompt";
@@ -54,6 +55,8 @@ const YoutubeHolderPrompts = ({data}) => {
       console.log("ERROR: ", error);
     })
   }; // const FbConversionEvent, ending bracket
+
+  fbq('track', 'Purchase', {currency: "USD", value: 30.00});
 
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
