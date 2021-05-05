@@ -52,7 +52,7 @@ const YoutubeHolderPrompts = ({data}) => {
       // handle error
       console.log("ERROR: ", error);
     })
-  };
+  }; // const FbConversionEvent, ending bracket
 
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
