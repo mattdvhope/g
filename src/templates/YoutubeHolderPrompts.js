@@ -38,7 +38,8 @@ const YoutubeHolderPrompts = ({data}) => {
                   "thisThing": "it"
                 }
             }
-        ]
+        ],
+        "test_event_code": "TEST79270"
       };
 
     const url = `https://graph.facebook.com/v10.0/${process.env.GATSBY_PIXEL_ID}/events?access_token=${process.env.GATSBY_PIXEL_ACCESS_TOKEN}`;
