@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { sha256 } from 'js-sha256';
-import { fbq } from 'gatsby-plugin-facebook-pixel';
+import { fbq } from '@hutsoninc/gatsby-plugin-facebook-pixel';
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable";
 import YoutubeVideo from "./YoutubeVideo";
 import ButtonForPrompt from "./ButtonForPrompt";
@@ -44,6 +44,8 @@ const YoutubeHolderPrompts = ({data}) => {
       };
 
     const url = `https://graph.facebook.com/v10.0/${process.env.GATSBY_PIXEL_ID}/events?access_token=${process.env.GATSBY_PIXEL_ACCESS_TOKEN}`;
+  
+    fbq('track', 'Contact');
 
     axios.post(url, dataFromEvent)
     .then(response => {
@@ -55,8 +57,6 @@ const YoutubeHolderPrompts = ({data}) => {
       console.log("ERROR: ", error);
     })
   }; // const FbConversionEvent, ending bracket
-
-  fbq('track', 'Purchase', {currency: "USD", value: 30.00});
 
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {

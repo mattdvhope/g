@@ -943,6 +943,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.12.5":
+  version "7.14.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
+  integrity sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.9.6":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.10.1.tgz#36057177f8d42628e97744e76ba4851fc7369045"
@@ -1017,6 +1024,13 @@
   integrity sha512-tAag0jEcjwH+P2quUfipd7liWCNX2F8NvYjQp2wtInsZxnMlypdw0FtAOLxtvvkO+GSRRbmNi8m/5y42PQJYCQ==
   dependencies:
     "@hapi/hoek" "^8.3.0"
+
+"@hutsoninc/gatsby-plugin-facebook-pixel@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@hutsoninc/gatsby-plugin-facebook-pixel/-/gatsby-plugin-facebook-pixel-1.0.0.tgz#f66d3394d91c42226381aa715237474a1769369b"
+  integrity sha512-1NuXprg3KShQATk1bRNRFpnbS1OiWf6yAPfMUPJJnC2oc685mR521qoAdzTopqh6DIKf8liyO0hC49vtQB8oIw==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
 
 "@jest/types@^25.5.0":
   version "25.5.0"
@@ -5971,11 +5985,6 @@ gatsby-plugin-facebook-analytics@^2.4.4:
   integrity sha512-n0XWZ4mS7jaz+EKCIqHFlA/77TTVjZ0ifUcF8qeevap3dT1qEjOvgYWf5BlNK20B54LUcRhkKAVcggaO1vimeg==
   dependencies:
     "@babel/runtime" "^7.10.2"
-
-gatsby-plugin-facebook-pixel@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-facebook-pixel/-/gatsby-plugin-facebook-pixel-1.0.3.tgz#d3cab36fa61803e9d412f36847775d383325dfdf"
-  integrity sha512-IM4e+5FkpLUCV/69tU+GFXVAs0EJXBfM/BARO/6SaMqalLfj1fj4ZXUyC8kHy3RiTMuw+y8g2mdkBMZqj7RyWQ==
 
 gatsby-plugin-manifest@^2.2.39:
   version "2.4.9"
