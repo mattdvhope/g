@@ -14,7 +14,7 @@ const YoutubeHolderPrompts = ({data}) => {
 
   const scrollToTopOfBlog = () => window.innerWidth < 1000 ? window.scrollTo(0, 0) : null
 
-  const FbConversionEvent = () => { // To record Conversion Events in FB Events Manager / Pixel
+  const FbConversionEvent = () => { // To record Conversion Events in FB Events Manager / A "Server Event" from my domain's server
     const timestamp = Math.round(Date.now() / 1000);
     const urlOfEvent = "https://relationshipsthailand.org/" + data.slug;
     const fbFirstName = sha256('matt'); // this is according to FB's rule of using a hashed version of user_data
