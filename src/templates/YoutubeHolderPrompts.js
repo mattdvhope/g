@@ -18,21 +18,21 @@ const YoutubeHolderPrompts = ({data}) => {
   const FbConversionEvent = () => { // To record Conversion Events in FB Events Manager / A "Server Event" (linked to Pixel) from my domain's server
     const timestamp = Math.round(Date.now() / 1000);
     const urlOfEvent = "https://relationshipsthailand.org/" + data.slug;
-    const fbFirstName = sha256('mark'); // this is according to FB's rule of using a hashed version of user_data
-    const fbLastName = sha256('mallory');
+    const fbFirstName = sha256('matt'); // this is according to FB's rule of using a hashed version of user_data
+    const fbLastName = sha256('malone');
 
-    const dataFromEvent = 
-      {
+    const dataFromEvent =
+      {  // "Conversion API": data & url...
         "data": [
             {
-                "event_name": "Reading",
+                "event_name": "Reading", // <--"Custom Event" (FB "Custom Conversion" will USE it [provide RULES for it])
                 "event_time": timestamp,
                 "action_source": "website",
                 "event_source_url": urlOfEvent,
                 "user_data": {
-                    // "fn": fbFirstName,
-                    // "ln": fbLastName,
-                    "fb_login_id": 1577295511, // not me!!
+                    "fn": fbFirstName,
+                    "ln": fbLastName,
+                    "fb_login_id": 1577295302,
                     "client_user_agent": "RelationshipsThailand"
                 },
                 "custom_data": {
