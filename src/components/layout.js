@@ -33,11 +33,11 @@ const Layout = ({ children, header }) => {
       
       render={data => (
         <> {/* Note: FB Pixel is a plugin at 'gatsby-config.js' */}
-          <Helmet> {/* 1. FB SDK for app (login, etc), 2. FB domain verification */}
+          <Helmet> {/* 1. FB SDK for app (login, etc) -- VERIFY VERSION!!!!!, 2. FB domain verification */}
             <div id="fb-root"></div>
             <script async defer
               crossorigin="anonymous"
-              src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v7.0&appId=611958516129057&autoLogAppEvents=1"
+              src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v10.0&appId=611958516129057&autoLogAppEvents=1"
               nonce="PFVZXkQp"
             />
             <meta name="facebook-domain-verification" content="k80kka3b227qj11jguub5d6jzk3ycm" />
