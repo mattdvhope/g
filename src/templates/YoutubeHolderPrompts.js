@@ -30,9 +30,9 @@ const YoutubeHolderPrompts = ({data}) => {
                 "action_source": "website",
                 "event_source_url": urlOfEvent,
                 "user_data": {
-                    "fn": fbFirstName,
-                    "ln": fbLastName,
-                    "fb_login_id": 1577295302,
+                    // "fn": fbFirstName,
+                    // "ln": fbLastName,
+                    "fb_login_id": 1588295301,
                     "client_user_agent": "RelationshipsThailand"
                 },
                 "custom_data": {
