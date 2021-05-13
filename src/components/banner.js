@@ -18,7 +18,7 @@ export default class Banner extends Component {
     };
   }
 
-  componentDidMount() { // comment
+  componentDidMount() {
     this.setState({ window: window })
   }
 
