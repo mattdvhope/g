@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import axios from 'axios';
 // import { sha256 } from 'js-sha256';
-// import { fbq } from '@hutsoninc/gatsby-plugin-facebook-pixel';
+import { fbq } from '@hutsoninc/gatsby-plugin-facebook-pixel';
 import { FbConversionEvent } from "../utils/FbConversionEvent";
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable";
 import YoutubeVideo from "./YoutubeVideo";
@@ -21,14 +21,25 @@ const YoutubeHolderPrompts = ({data}) => {
       return (
         <div>
           <hr/>
-          <ButtonForPrompt onClick={() => { setPrompt(promptsElementNum + 1); FbConversionEvent(data); scrollToTopOfBlog(); }} buttonWords={buttonWords} />
+          <ButtonForPrompt
+            onClick={() => {
+              // FbConversionEvent(data);
+              fbq('trackCustom', 'ClickedFirstButton');
+              setPrompt(promptsElementNum + 1);
+              scrollToTopOfBlog(); }}
+            buttonWords={buttonWords} />
         </div>)
     } else if (promptsElementNum !== prompts.length-1) {
       return (
         <div>
           <hr/>
           <h2 onClick={() => { setPrompt(promptsElementNum - 1); scrollToTopOfBlog(); }} >⬅️&nbsp;</h2>
-          <ButtonForPrompt onClick={() => { setPrompt(promptsElementNum + 1); scrollToTopOfBlog(); }} buttonWords={buttonWords} />
+          <ButtonForPrompt
+            onClick={() => {
+              fbq('trackCustom', 'ClickedNextButton');
+              setPrompt(promptsElementNum + 1);
+              scrollToTopOfBlog(); }}
+            buttonWords={buttonWords} />
         </div>)
     } else if (promptsElementNum === prompts.length-1) {
       return (
