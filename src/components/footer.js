@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { isLoggedIn } from "../utils/auth"
+import { Link } from "gatsby";
 import Logout from "../components/Logout";
 
 export default class footer extends Component {
@@ -9,11 +10,9 @@ export default class footer extends Component {
 
     const privacy = (
       <span>
-        <a href="https://www.privacypolicies.com/privacy/view/b06683b5030f4b73f98811015534ea5f"
-           target="_blank"
-           style={{ fontSize: `80%` }} >
-          Privacy Policy
-        </a>
+        <Link to="/privacy" >
+          นโยบายส่วนตัว
+        </Link>
       </span>
     )
 
