@@ -81,41 +81,20 @@ export const pageQuery = graphql`
           html
         }
       }
-
       featureImage {
         fluid {
           src
         }
       }
-
-      survey {
-        id
-        question
-        questionChoices {
-          id
-          choice
-        }
-      }
-      ctaLast {
-        childMarkdownRemark {
-          html
-        }
-      }
-
-
-
       promptsForResponse {
+        promptSlug
         promptContent {
           childMarkdownRemark {
             html
           }
         }
         buttonInvitation
-        orderNumber
       }
-
-
-
     }
     contentfulHomePage {
       siteUrl

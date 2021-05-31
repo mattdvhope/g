@@ -4,23 +4,17 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
   return new Promise((resolve, reject) => {
     const blogPostTemplate = path.resolve("src/templates/blog-post.js");
-    const surveyPostTemplate = path.resolve("src/templates/survey-post.js");
     resolve(
       graphql(`
         {
-          allContentfulBlogs(limit: 100) {
+          allContentfulBlogs(limit: 150) {
             edges {
               node {
                 id
                 slug
-              }
-            }
-          }
-          allContentfulSurveys(limit: 100) {
-            edges {
-              node {
-                id
-                slug
+                promptsForResponse {
+                  promptSlug
+                }
               }
             }
           }
@@ -30,25 +24,32 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors);
         }
 
+console.log(result.data.allContentfulBlogs.edges)
+
+        // result.data.allContentfulBlogs.edges.forEach(edge => {
+        //   createPage({
+        //     path: edge.node.slug,
+        //     component: blogPostTemplate,
+        //     context: {
+        //       slug: edge.node.slug
+        //     }
+        //   });
+        // });
+
         result.data.allContentfulBlogs.edges.forEach(edge => {
-          createPage({
-            path: edge.node.slug,
-            component: blogPostTemplate,
-            context: {
-              slug: edge.node.slug
-            }
-          });
+          edge.node.promptsForResponse.forEach(prompt => {
+            createPage({
+              path: edge.node.slug + "/" + prompt.promptSlug,
+              component: blogPostTemplate,
+              context: {
+                slug: edge.node.slug
+              }
+            });
+          })
         });
 
-        result.data.allContentfulSurveys.edges.forEach(edge => {
-          createPage({
-            path: edge.node.slug,
-            component: surveyPostTemplate,
-            context: {
-              slug: edge.node.slug
-            }
-          });
-        });
+
+
         return;
       })
     );
