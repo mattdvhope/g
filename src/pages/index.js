@@ -8,7 +8,6 @@ import Banner from "../components/banner";
 import About from "../components/about";
 import Service from "../components/service";
 import Work from "../components/work";
-import Surveys from "../components/surveys";
 import Blogs from "../components/blogs";
 import Testimonial from "../components/testimonial";
 import Contact from "../components/contact";
@@ -33,12 +32,6 @@ const IndexPage = ({ data }) => {
         .filter(item => item === "Service")
         .map(t => {
           return <Service data={data.allContentfulService} key={t}></Service>;
-        })}
-
-      {data.contentfulHomePage.menus
-        .filter(item => item === "Surveys")
-        .map(t => {
-          return <Surveys data={data.allContentfulSurveys} key={t}></Surveys>;
         })}
 
       {data.contentfulHomePage.menus
@@ -137,35 +130,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulSurveys(limit: 2, sort: {fields: createdAt, order: DESC}) {
-      edges {
-        node {
-          title
-          slug
-          image {
-            fluid(maxWidth: 600) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-          description {
-            description
-          }
-          questions {
-            question
-            questionChoices {
-              choice
-            }
-          }
-          createdAt
-        }
-      }
-    }
+
     allContentfulBlogs(limit: 5, sort: {fields: createdAt, order: DESC}) {
       edges {
         node {
