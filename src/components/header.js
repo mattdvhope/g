@@ -65,15 +65,6 @@ export default class Header extends Component {
                         </li>
                       );
                     })}
-                  {data.menus
-                    .filter(item => item === "Surveys")
-                    .map(t => {
-                      return (
-                        <li key={t} >
-                          <Link to={`/#Surveys`}>Surveys</Link>
-                        </li>
-                      );
-                    })}
 
                   {data.menus
                     .filter(item => item === "Blogs")
@@ -135,15 +126,6 @@ export default class Header extends Component {
                   <li>
                     <Link to="/#home">หน้าแรก</Link>
                   </li>
-                  {data.menus
-                    .filter(item => item === "Surveys")
-                    .map(t => {
-                      return (
-                        <li key={t}>
-                          <Link to="/surveys">Surveys</Link>
-                        </li>
-                      );
-                    })}
                   {data.menus
                     .filter(item => item === "Blogs")
                     .map(t => {
