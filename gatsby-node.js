@@ -12,9 +12,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               node {
                 id
                 slug
-                promptsForResponse {
-                  promptSlug
-                }
               }
             }
           }
@@ -23,33 +20,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         if (result.errors) {
           reject(result.errors);
         }
-
-console.log(result.data.allContentfulBlogs.edges)
-
-        // result.data.allContentfulBlogs.edges.forEach(edge => {
-        //   createPage({
-        //     path: edge.node.slug,
-        //     component: blogPostTemplate,
-        //     context: {
-        //       slug: edge.node.slug
-        //     }
-        //   });
-        // });
-
         result.data.allContentfulBlogs.edges.forEach(edge => {
-          edge.node.promptsForResponse.forEach(prompt => {
-            createPage({
-              path: edge.node.slug + "/" + prompt.promptSlug,
-              component: blogPostTemplate,
-              context: {
-                slug: edge.node.slug
-              }
-            });
-          })
+          createPage({
+            path: edge.node.slug,
+            component: blogPostTemplate,
+            context: {
+              slug: edge.node.slug
+            }
+          });
         });
-
-
-
         return;
       })
     );

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// import axios from 'axios';
-// import { sha256 } from 'js-sha256';
+import { Link, navigate } from "gatsby";
 import { fbq } from '@hutsoninc/gatsby-plugin-facebook-pixel';
 import { FbConversionEvent } from "../utils/FbConversionEvent";
 import { youtubeEmbeddable } from "../utils/youtubeEmbeddable";
@@ -14,7 +13,7 @@ const YoutubeHolderPrompts = ({data}) => {
   const [promptsElementNum, setPrompt] = useState(0);
   const buttonWords = prompts[promptsElementNum].buttonInvitation;
 
-  const scrollToTopOfBlog = () => window.innerWidth < 1000 ? window.scrollTo(0, 0) : null
+  const scrollToTopOfBlog = () => window.innerWidth < 500 ? window.scrollTo(0, 0) : null
 
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
@@ -26,7 +25,8 @@ const YoutubeHolderPrompts = ({data}) => {
               // FbConversionEvent(data);
               fbq('trackCustom', 'ClickedFirstButton'); // you can add JSON params here too!!
               setPrompt(promptsElementNum + 1);
-              scrollToTopOfBlog(); }}
+              scrollToTopOfBlog();
+            }}
             buttonWords={buttonWords} />
         </div>)
     } else if (promptsElementNum !== prompts.length-1) {
@@ -38,7 +38,8 @@ const YoutubeHolderPrompts = ({data}) => {
             onClick={() => {
               fbq('trackCustom', 'ClickedNextButton'); // you can add JSON params here too!!
               setPrompt(promptsElementNum + 1);
-              scrollToTopOfBlog(); }}
+              scrollToTopOfBlog();
+            }}
             buttonWords={buttonWords} />
         </div>)
     } else if (promptsElementNum === prompts.length-1) {
