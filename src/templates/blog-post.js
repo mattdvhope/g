@@ -53,14 +53,14 @@ export default class blogPost extends Component {
             <FacebookPageBox/>
             <br/>
             <hr/>
-            <Share
+        {/* <Share
               socialConfig={{
                 config: {
                   url: `${siteurl}${socialConfigss.slug}`,
                   title: `${socialConfigss.title}`
                 }
               }}
-            />
+            />  */}
           </div>
         </div>
       </Layout>
