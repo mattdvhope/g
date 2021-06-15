@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Share from "../components/share";
+// import Share from "../components/share";
 import YoutubeHolder from "./YoutubeHolder"
 import YoutubeHolderPrompts from "./YoutubeHolderPrompts"
 import FacebookPageBox from "../components/FacebookPageBox"
