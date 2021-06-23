@@ -23,7 +23,7 @@ const YoutubeHolderPrompts = ({data}) => {
           <ButtonForPrompt
             onClick={() => {
               // FbConversionEvent(data);
-              fbq('trackCustom', 'ClickedFirstButton'); // you can add JSON params here too!!
+              fbq('trackCustom', 'ClickedFirstButton'); // you can add JSON params here too!! --> https://developers.facebook.com/docs/mediaguide/pixel-and-analytics
               setPrompt(promptsElementNum + 1);
               scrollToTopOfBlog();
             }}
@@ -36,7 +36,7 @@ const YoutubeHolderPrompts = ({data}) => {
           <h2 onClick={() => { setPrompt(promptsElementNum - 1); scrollToTopOfBlog(); }} >⬅️&nbsp;</h2>
           <ButtonForPrompt
             onClick={() => {
-              fbq('trackCustom', 'ClickedNextButton'); // you can add JSON params here too!!
+              fbq('trackCustom', 'ClickedNextButton'); // you can add JSON params here too!! --> https://developers.facebook.com/docs/mediaguide/pixel-and-analytics
               setPrompt(promptsElementNum + 1);
               scrollToTopOfBlog();
             }}
