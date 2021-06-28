@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 // import Share from "../components/share";
@@ -49,6 +49,14 @@ export default class blogPost extends Component {
         <div className="site-container blog-post">
           <div className="container">
             {this.YT(data)}
+            <hr/>
+            <div style={{ margin: `auto`, width: `90%` }} >
+              <Link
+                to="/videos"
+                style={{ color: `#8f7228`, fontSize: `170%` }}
+              >📽️ ดูวิดีโอเพิ่มเติม 📺</Link>
+            </div>
+            <hr/>
         {/* <hr/>
             <FacebookPageBox/>
             <br/>
