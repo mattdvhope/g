@@ -22,8 +22,6 @@ const Privacy = ({ data }) => {
         </div>
       </div>
 
-
-      
     </Layout>
   )
 }
