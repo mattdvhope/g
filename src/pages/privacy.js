@@ -5,7 +5,7 @@ import SEO from "../components/seo";
 
 const Privacy = ({ data }) => {
   return (
-    <Layout header="home">
+    <Layout header="privacy">
       <SEO
         title={data.allContentfulPrivacyPage.designation}
         keywords={[`ความเชื่อ`, `ความหวัง`, `ความรัก`]}
