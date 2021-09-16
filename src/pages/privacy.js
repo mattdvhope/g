@@ -25,7 +25,7 @@ const Privacy = ({ data }) => {
           />
         </div>
       </div>
-      <h2>{JSON.stringify(browser)}</h2>
+      <h4>{JSON.stringify(browser)}</h4>
     </Layout>
   )
 }
