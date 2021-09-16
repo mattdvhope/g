@@ -1,9 +1,13 @@
 import React from "react";
+import { detect } from "detect-browser";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const Privacy = ({ data }) => {
+
+  const browser = detect();
+
   return (
     <Layout header="privacy">
       <SEO
@@ -21,7 +25,7 @@ const Privacy = ({ data }) => {
           />
         </div>
       </div>
-
+      <h2>{JSON.stringify(browser)}</h2>
     </Layout>
   )
 }

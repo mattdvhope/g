@@ -8,6 +8,7 @@
     "@hutsoninc/gatsby-plugin-facebook-pixel": "^1.0.0",
     "axios": ">=0.21.1",
     "bootstrap": "^4.4.1",
+    "detect-browser": "^5.2.0",
     "disqus-react": "^1.0.7",
     "dotenv": "^8.2.0",
     "fs": "^0.0.1-security",
