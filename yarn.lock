@@ -936,13 +936,6 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.2":
-  version "7.10.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.2.tgz#d103f21f2602497d38348a32e008637d506db839"
-  integrity sha512-6sF3uQw2ivImfVIl62RZ7MXhO2tap69WeWK57vAaimT6AZbE4FbqjdEJIN1UqoD6wI6B+1n9UiagafH1sxjOtg==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
 "@babel/runtime@^7.12.5":
   version "7.14.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
@@ -5983,13 +5976,6 @@ gatsby-page-utils@^0.2.7:
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
-
-gatsby-plugin-facebook-analytics@^2.4.4:
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-facebook-analytics/-/gatsby-plugin-facebook-analytics-2.4.4.tgz#c7efa7d35c8276d975d53b55216cc151c109ba28"
-  integrity sha512-n0XWZ4mS7jaz+EKCIqHFlA/77TTVjZ0ifUcF8qeevap3dT1qEjOvgYWf5BlNK20B54LUcRhkKAVcggaO1vimeg==
-  dependencies:
-    "@babel/runtime" "^7.10.2"
 
 gatsby-plugin-manifest@^2.2.39:
   version "2.4.9"

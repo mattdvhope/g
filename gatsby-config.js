@@ -37,33 +37,33 @@ module.exports = {
         pixelId: '222946198915072',
       },
     },
-    {
-      resolve: `gatsby-plugin-facebook-analytics`, // This is going away from FB soon...useless soon!!
-      options: {
-        // Required - set this to the ID of your Facebook app.
-        appId: `611958516129057`,
+    // {
+    //   resolve: `gatsby-plugin-facebook-analytics`, // This is going away from FB soon...useless soon!!
+    //   options: {
+    //     // Required - set this to the ID of your Facebook app.
+    //     appId: `611958516129057`,
 
-        // Which version of the SDK to load.
-        version: `v7.0`,
+    //     // Which version of the SDK to load.
+    //     version: `v7.0`,
 
-        // Determines whether XFBML tags used by social plugins are parsed.
-        xfbml: true,
+    //     // Determines whether XFBML tags used by social plugins are parsed.
+    //     xfbml: true,
 
-        // Determines whether a cookie is created for the session or not.
-        cookie: false,
+    //     // Determines whether a cookie is created for the session or not.
+    //     cookie: false,
 
-        // Include Facebook analytics in development.
-        // Defaults to false meaning the library will only be loaded in production.
-        includeInDevelopment: false,
+    //     // Include Facebook analytics in development.
+    //     // Defaults to false meaning the library will only be loaded in production.
+    //     includeInDevelopment: false,
 
-        // Include debug version of sdk
-        // Defaults to false meaning the library will load sdk.js
-        debug: false,
+    //     // Include debug version of sdk
+    //     // Defaults to false meaning the library will load sdk.js
+    //     debug: false,
 
-        // Select your language.
-        language: `th_TH`,
-      },
-    },
+    //     // Select your language.
+    //     language: `th_TH`,
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
